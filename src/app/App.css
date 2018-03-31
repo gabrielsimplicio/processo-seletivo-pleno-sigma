@@ -11,10 +11,6 @@
 
 .App-navbar li {
   display: inline-block;
-  /* padding: 5px 10px; */
-}
-.App-navbar li:first-child {
-  /* padding-left: 0; */
 }
 
 .App-navbar li a {
