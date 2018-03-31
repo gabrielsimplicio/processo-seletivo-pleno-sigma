@@ -30,15 +30,15 @@ class Comics extends Component {
   render() {
     return (
 
-        <article>
-          <header>
-            <h1>Quadrinhos</h1>
-          </header>
-          <div>
-            {this.state.comics.map(x => (<p>{x.title}</p>) )}
-          </div>
-          <p>{this.props.loading ? 'carregando...' : ''}</p>
-        </article>
+      <article>
+        <header>
+          <h1>Quadrinhos</h1>
+        </header>
+        <div>
+          {this.state.comics.map(x => (<p>{x.title}</p>) )}
+        </div>
+        <p>{this.props.loading ? 'carregando...' : ''}</p>
+      </article>
     );
   }
 }
