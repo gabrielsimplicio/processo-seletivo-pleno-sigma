@@ -5,7 +5,7 @@ import Home from './app/Home';
 import Comics from './comics/Comics';
 import Characters from './characters/Characters';
 
-import './app/App.css';
+import './app/App.scss';
 
 class App extends Component {
   render() {
