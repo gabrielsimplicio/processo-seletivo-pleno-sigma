@@ -121,11 +121,10 @@ describe('getComic', () => {
   };
 
   const expected = {
-    id: 1220,
-    title: 'Amazing Spider-Man 500 Covers Slipcase - Book II (Trade Paperback)',
+    id: objectTest.id,
+    title: objectTest.title,
     price: 0,
-    url: 'http://marvel.com/comics/collection/1220/amazing_spider-man_500_covers_slipcase_-_book_ii_trade_paperback?utm_campaign=apiRef&utm_source=f1ba065adfeffb958a41c4e59f325904',
-    thumbnail: 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available'
+    thumbnail: objectTest.thumbnail.path
   };
 
   test('Expect to have right properties', () => expect(getComic(objectTest)).toEqual(expected));

@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 
 import Fetching from '../general/Fetching';
+import Loading from "../general/Loading";
 import { marvelUrl } from '../general/marvelUrl';
 import { getComic } from './mappings';
+
+import ComicLink from './ComicLink';
+
+import './Comics.scss';
 
 class Comics extends Component {
 
@@ -28,16 +33,22 @@ class Comics extends Component {
   }
 
   render() {
+
+    if (this.props.loading) {
+      return (
+        <Loading isLoading={this.props.loading} />
+      );
+    }
+
     return (
 
-      <article>
+      <article className="Comics">
         <header>
           <h1>Quadrinhos</h1>
         </header>
         <div>
-          {this.state.comics.map(x => (<p>{x.title}</p>) )}
+          {this.state.comics.map(x => (<ComicLink {...x}/>) )}
         </div>
-        <p>{this.props.loading ? 'carregando...' : ''}</p>
       </article>
     );
   }

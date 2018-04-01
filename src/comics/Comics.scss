@@ -1,0 +1,60 @@
+.Comics {
+
+  a {
+    text-decoration: none;
+  }
+}
+
+
+.ComicLink {
+
+  display: flex;
+  margin: 10px;
+  padding: 10px;
+
+  border: 1px solid gray;
+  border-radius: 8px;
+
+  color: rgb(100,100,100);
+
+  &:hover {
+    border-color: black;
+    color: black;
+  }
+
+  img {
+    height: 200px;
+  }
+
+  .description {
+    position: relative;
+    flex: 1;
+    padding: 10px;
+  }
+
+  .title,
+  .price {
+    display: block;
+    text-decoration: none;
+  }
+
+  .title {
+    font-size: 1.2em;
+  }
+
+  .price,
+  .not-found {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 1.4em;
+  }
+
+  .price {
+    color: #ff8300;
+  }
+
+  .not-found {
+    color: red;
+  }
+}
