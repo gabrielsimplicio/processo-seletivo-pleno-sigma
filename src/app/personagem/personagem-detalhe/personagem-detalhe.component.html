@@ -1,0 +1,35 @@
+
+<div class="personagem" *ngIf="personagem !== undefined">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="titulo"><h1>Personagem</h1></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5">
+          <img [src]="personagem.thumbnail.path +'.'+ personagem.thumbnail.extension" class="img-fluid" />
+        </div>
+        <div class="descricao col-sm-7">
+          <div class="row">
+            <div class="col-sm-10">
+              <h1>{{ personagem.name }}</h1>
+            </div>
+            <div class="col-sm-12">
+               {{ personagem.description }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="quadrinhos row">
+        <div class="col-sm-12">
+          <h1 class="titulo" >Quadrinhos</h1>
+          <div class="row">
+            <div class="quadrinho col-sm-3" *ngFor="let quadrinho of quadrinhos" >
+              <img [src]="quadrinho.thumbnail.path +'.'+ quadrinho.thumbnail.extension" class="img-fluid" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
