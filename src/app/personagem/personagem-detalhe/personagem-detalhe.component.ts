@@ -21,11 +21,12 @@ export class PersonagemDetalheComponent implements OnInit {
   constructor(
     private personagemService: PersonagemService,
     private quadrinhosService: QuadrinhoService,
-    private route: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
-    this.id = +this.route.snapshot.paramMap.get('id');
+    this.id = +this.activatedRoute.snapshot.paramMap.get('id');
     this.carregarPersonagemPorId();
     this.carregarListaDeQuadrinhosPorPersonagem();
   }
@@ -37,6 +38,10 @@ export class PersonagemDetalheComponent implements OnInit {
       response => this.personagem = response.data.results[0],
       error => console.error(error)
     );
+  }
+
+  visualizarPaginaDetalhes(id) {
+    this.router.navigate(['quadrinho', id]);
   }
 
   carregarListaDeQuadrinhosPorPersonagem() {

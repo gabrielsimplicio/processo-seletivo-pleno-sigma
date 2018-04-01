@@ -15,6 +15,10 @@ export class QuadrinhoService {
     return this.http.get(`comics?hasDigitalIssue=true&apikey=${environment.apiKey}`);
   }
 
+  obterOsDozeQuadrinhosMaisRecentes(): Observable<any> {
+    return this.http.get(`comics?orderBy=-focDate&hasDigitalIssue=true&limit=12&apikey=${environment.apiKey}`);
+  }
+
   obterTodosQuadrinhosPaginado(paginacao): Observable<any> {
     return this.http.get(`comics?hasDigitalIssue=true&limit=${paginacao.limit}&offset=${paginacao.offset}&apikey=${environment.apiKey}`);
   }
@@ -43,5 +47,4 @@ export class QuadrinhoService {
     });
     return quadrinhos;
   }
-
 }

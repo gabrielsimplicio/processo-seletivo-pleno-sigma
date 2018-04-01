@@ -14,6 +14,10 @@ export class PersonagemService {
     return this.http.get(`characters?limit=10&orderBy=-modified&apikey=${environment.apiKey}`);
   }
 
+  obterTodosOsDozePersonagensMaisRecente(): Observable<any> {
+    return this.http.get(`characters?orderBy=-modified&limit=12&apikey=${environment.apiKey}`);
+  }
+
   obterTodosPersonagensPaginado(paginacao): Observable<any> {
     return this.http.get(`characters?orderBy=-modified&limit=${paginacao.limit}&offset=${paginacao.offset}&apikey=${environment.apiKey}`);
   }

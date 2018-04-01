@@ -33,7 +33,8 @@ export class HomeComponent implements OnInit {
   }
 
   carregarListaDeTodosQuadrinhos() {
-    this.quadrinhoService.obterTodosQuadrinhos()
+    this.quadrinhoService
+    .obterOsDozeQuadrinhosMaisRecentes()
     .subscribe(
       result => {
         this.quadrinhos = this.quadrinhoService.subscribeQuadrinhos(result);
@@ -44,7 +45,7 @@ export class HomeComponent implements OnInit {
 
   carregarListaDePersonagens() {
     this.personagemService
-      .obterTodosPersonagens()
+      .obterTodosOsDozePersonagensMaisRecente()
       .subscribe(
         result => {
           this.personagens = result.data.results;

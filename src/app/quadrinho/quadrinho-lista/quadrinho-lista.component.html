@@ -24,10 +24,10 @@
     </div>
     <div class="jumbotron">
         <div class="row" >
-          <div (click)="visualizarPaginaDetalhes(quadrinho.id)" class="quadrinho col-sm-4" *ngFor="let quadrinho of quadrinhos">
+          <div (click)="visualizarPaginaDetalhes(quadrinho.id)" class="quadrinho col-sm-3" *ngFor="let quadrinho of quadrinhos">
             <div class="conteudo">
               <img [src]="quadrinho.urlImagem" class="img-fluid" />
-              <h6>{{ quadrinho.title }}</h6>
+              <h5>{{ quadrinho.title }}</h5>
             </div>
           </div>
         </div>

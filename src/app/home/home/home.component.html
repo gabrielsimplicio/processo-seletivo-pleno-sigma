@@ -1,17 +1,13 @@
 <div class="container">
   <div class="quadrinhos">
       <div class="jumbotron">
-
       <div class="row">
         <div class="col">
-          <div class="titulo"><h1>Quadrinhos</h1></div>
+          <div class="titulo"><h1>Quadrinhos mais recentes</h1></div>
         </div>
       </div>
       <div class="grid row" >
-
-
-       <!-- <pre> {{ quadrinhos|json }}</pre> -->
-        <div (click)="navigate('quadrinho', quadrinho.id)" class="quadrinho col-sm-4" *ngFor="let quadrinho of quadrinhos">
+        <div (click)="navigate('quadrinho', quadrinho.id)" class="quadrinho col-sm-3" *ngFor="let quadrinho of quadrinhos">
           <div class="conteudo">
             <img [src]="quadrinho.urlImagem" class="img-fluid" />
             <h5>{{ quadrinho.title }}</h5>
@@ -21,12 +17,11 @@
     </div>
   </div>
 
-  <div class="personagens">
+  <div class="personagem">
       <div class="jumbotron">
-
       <div class="row">
         <div class="col-sm-12">
-          <div class="titulo"><h1>Personagens </h1></div>
+          <div class="titulo"><h1>Personagens mais recentes</h1></div>
         </div>
       </div>
       <div class="row">

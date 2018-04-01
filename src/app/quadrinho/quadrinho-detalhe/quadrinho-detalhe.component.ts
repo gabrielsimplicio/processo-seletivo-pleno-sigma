@@ -42,7 +42,10 @@ export class QuadrinhoDetalheComponent implements OnInit {
     this.quadrinhoService
     .obterQuadrinhoPorId(this.id)
     .subscribe(
-      response => this.quadrinho = response.data.results[0],
+      response => {
+        const quadrinho = this.quadrinhoService.subscribeQuadrinhos(response);
+        this.quadrinho = quadrinho[0];
+      },
       error => console.error(error)
     );
   }
@@ -51,13 +54,8 @@ export class QuadrinhoDetalheComponent implements OnInit {
     this.personagemService
     .obterPersonagemPorQuadrinho(this.id)
     .subscribe(
-      response => this.personagens = response.data.results,
-      error => console.error(error)
+      response => this.personagens = this.personagemService.subscribePersonagens(response),
+      error => console.error(error),
     );
-  }
-
-  arrumaImagem(caminho: string , extensao: string ): string {
-   this.imagem = `${caminho}.${extensao}`;
-   return this.imagem;
   }
 }
