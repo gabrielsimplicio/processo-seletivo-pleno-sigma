@@ -46,7 +46,7 @@ export class QuadrinhoListaComponent implements OnInit {
   private carregarListaDeQuadrinhos() {
     let acao;
     if (this.textoPesquisa) {
-      acao = this.quadrinhoService.obterQuadrinhos(
+      acao = this.quadrinhoService.obterQuadrinhosPorTitulo(
         this.textoPesquisa,
         this.paginacaoService.paginacao
       );

@@ -1,24 +1,25 @@
-import { Paginacao } from './../../shared/paginacao/paginacao.model';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { HttpBaseService } from './../../shared/http-base.service';
 import { environment } from '../../../environments/environment';
 
+import { Paginacao } from './../../shared/paginacao/paginacao.model';
+
 @Injectable()
 export class QuadrinhoService {
 
   constructor(private http: HttpBaseService) { }
 
-  obterTodosQuadrinhosPaginado(paginacao): Observable<any> {
-    return this.http.get(`comics?hasDigitalIssue=true&limit=${paginacao.limit}&offset=${paginacao.offset}&apikey=${environment.apiKey}`);
-  }
-
   obterTodosQuadrinhos(): Observable<any> {
     return this.http.get(`comics?hasDigitalIssue=true&apikey=${environment.apiKey}`);
   }
 
-  obterQuadrinhos(textoPesquisa: string, paginacao: Paginacao): Observable<any> {
+  obterTodosQuadrinhosPaginado(paginacao): Observable<any> {
+    return this.http.get(`comics?hasDigitalIssue=true&limit=${paginacao.limit}&offset=${paginacao.offset}&apikey=${environment.apiKey}`);
+  }
+
+  obterQuadrinhosPorTitulo(textoPesquisa: string, paginacao: Paginacao): Observable<any> {
     return this.http.get(`comics?hasDigitalIssue=true&limit=${paginacao.limit}&offset=${paginacao.offset}&apikey=${environment.apiKey}&titleStartsWith=${textoPesquisa}`);
   }
 
