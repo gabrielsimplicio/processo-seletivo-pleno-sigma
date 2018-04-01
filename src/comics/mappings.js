@@ -12,4 +12,4 @@ export const getDetailUrl = urls =>
   urls && urls.length ? urls.find(x => x.type === 'detail').url : '';
 
 export const getThumbnailPath = thumbnail =>
-  thumbnail && thumbnail.path ? thumbnail.path : '';
+  thumbnail && thumbnail.path ? `${thumbnail.path}.${thumbnail.extension}` : '';

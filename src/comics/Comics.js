@@ -47,7 +47,7 @@ class Comics extends Component {
           <h1>Quadrinhos</h1>
         </header>
         <div>
-          {this.state.comics.map(x => (<ComicLink {...x}/>) )}
+          {this.state.comics.map(comicProps => (<ComicLink {...comicProps}/>) )}
         </div>
       </article>
     );

@@ -35,7 +35,7 @@ describe('getThumbnailPath', () => {
   test('Expect to be an empty string', () => expect(getThumbnailPath()).toBe(''));
 
   test('Expect to be text.com/thumb', () =>
-    expect(getThumbnailPath({ path: 'text.com/thumb' })).toBe('text.com/thumb'));
+    expect(getThumbnailPath({ path: 'text.com/thumb', extension: 'png' })).toBe('text.com/thumb.png'));
 
 });
 
@@ -124,7 +124,7 @@ describe('getComic', () => {
     id: objectTest.id,
     title: objectTest.title,
     price: 0,
-    thumbnail: objectTest.thumbnail.path
+    thumbnail: objectTest.thumbnail.path + '.' +objectTest.thumbnail.extension
   };
 
   test('Expect to have right properties', () => expect(getComic(objectTest)).toEqual(expected));
