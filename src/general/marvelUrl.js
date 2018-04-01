@@ -3,13 +3,24 @@ const getKeyParams = () => 'ts=1&apikey=f1ba065adfeffb958a41c4e59f325904&hash=cc
 
 const getBaseUrl = () => 'http://gateway.marvel.com/v1/public';
 
-export const createUrl = (endpoint, baseUrl, apiKeys) => `${baseUrl}/${endpoint}?${apiKeys}`;
+export const createUrl = (endpoint, baseUrl, apiKeys, params) => {
+  let url = `${baseUrl}/${endpoint}?${apiKeys}`;
 
-export const marvelUrl = (endpoint) => {
+  if (params) {
+    Object.keys(params).forEach(key => {
+      url += `&${key}=${params[key]}`;
+    });
+  }
+
+  return url;
+};
+
+export const marvelUrl = (endpoint, params) => {
   return createUrl(
     endpoint,
     getBaseUrl(),
-    getKeyParams()
+    getKeyParams(),
+    params
   );
 }
 

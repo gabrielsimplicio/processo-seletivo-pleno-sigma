@@ -3,9 +3,9 @@ export const formatToString = (value) => {
     return '';
   }
 
-  var valueStr = value.toString().replace('.', ',');
+  let valueStr = value.toString().replace('.', ',');
 
-  var splitted = valueStr.split(',');
+  let splitted = valueStr.split(',');
 
   if (splitted.length === 1) {
     valueStr += ',00';

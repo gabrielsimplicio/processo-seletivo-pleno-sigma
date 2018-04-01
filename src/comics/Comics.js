@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 
-import Fetching from '../general/Fetching';
+import MarvelFetching from '../general/MarvelFetching';
 import Loading from "../general/Loading";
-import { marvelUrl } from '../general/marvelUrl';
 import { getComic } from './mappings';
 
 import ComicLink from './ComicLink';
@@ -13,21 +12,14 @@ class Comics extends Component {
 
   constructor(props) {
     super(props);
-    this.state = { comics: [], status: '', data: {} };
+    this.state = { comics: [], status: ''};
   }
 
   componentWillReceiveProps(nextProps) {
 
     if (!nextProps.loading) {
       this.setState({
-        comics: nextProps.data.data.results.map(getComic),
-        status: nextProps.data.status,
-        data: {
-          count: nextProps.data.data.count,
-          limit: nextProps.data.data.limit,
-          offset: nextProps.data.data.offset,
-          total: nextProps.data.data.total,
-        }
+        comics: nextProps.data.map(getComic),
       });
     }
   }
@@ -60,9 +52,9 @@ Comics.defaultProps = {
 }
 
 const FetchingComics = () => (
-  <Fetching url={marvelUrl('comics')}>
+  <MarvelFetching endpoint="comics" pagination>
     <Comics/>
-  </Fetching>
+  </MarvelFetching>
 );
 
 export default FetchingComics;

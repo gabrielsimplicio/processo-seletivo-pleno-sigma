@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 
 import { getCharacter } from './mappings';
 
-import Fetching from '../general/Fetching';
-import { marvelUrl } from '../general/marvelUrl';
+// import MarvelFetching from '../general/MarvelFetching';
 
 class Characters extends Component {
 
@@ -48,11 +47,11 @@ Characters.defaultProps = {
   loading: false
 }
 
-const FetchingCharacters = () => (
-  <Fetching url={marvelUrl('characters')}>
-    <Characters/>
-  </Fetching>
-);
+// const FetchingCharacters = () => (
+//   <Fetching url={marvelUrl('characters')}>
+//     <Characters/>
+//   </Fetching>
+// );
 
 
-export default FetchingCharacters;
+export default Characters;
