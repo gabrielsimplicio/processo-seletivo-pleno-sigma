@@ -1,28 +1,36 @@
 <div class="quadrinhos">
 
   <div class="container">
-    <div class="row">
-      <div class="col">
-        <div class="titulo">
-          <h1>Quadrinhos</h1>
+      <div class="row">
+        <div class="col">
+          <div class="titulo">
+            <h1>Quadrinhos</h1>
+          </div>
         </div>
       </div>
+      <div class="requisicoes row">
+        <div class="col-sm-6">
+          <form #form (ngSubmit)="submit(form)" novalidate>
+            <div class="form-group">
+              <input type="text"  class="form-control col-sm-8" name="textoPesquisa" placeholder="Buscar quadrinho pelo nome.." [(ngModel)]="textoPesquisa">
+              <button type="submit" class="btn btn-primary ">Buscar</button>
+          </div>
+          </form>
+        </div>
+        <div class="col-sm-6">
+          <app-paginacao (alterarPaginacao)="alterarPaginacao($event)" [paginacao]="paginacaoService.paginacao" [totalRegistros]="paginacaoService.totalRegistros">
+          </app-paginacao>
+        </div>
     </div>
-    <form #form (ngSubmit)="submit(form)" novalidate>
-      <input type="text" name="textoPesquisa" [(ngModel)]="textoPesquisa">
-      <button type="submit">AAAAAA</button> {{textoPesquisa}}
-    </form>
-
-    <app-paginacao (alterarPaginacao)="alterarPaginacao($event)" [paginacao]="paginacaoService.paginacao" [totalRegistros]="paginacaoService.totalRegistros">
-    </app-paginacao>
-
-    <div class="grid row" data-masonry='{ "itemSelector": ".quadrinho",  "isFitWidth": true  }'>
-      <div (click)="visualizarPaginaDetalhes(quadrinho.id)" class="quadrinho col-sm-4" *ngFor="let quadrinho of quadrinhos">
-        <div class="conteudo">
-          <img [src]="quadrinho.urlImagem" class="img-fluid" />
-          <h6>{{ quadrinho.title }}</h6>
+    <div class="jumbotron">
+        <div class="row" >
+          <div (click)="visualizarPaginaDetalhes(quadrinho.id)" class="quadrinho col-sm-4" *ngFor="let quadrinho of quadrinhos">
+            <div class="conteudo">
+              <img [src]="quadrinho.urlImagem" class="img-fluid" />
+              <h6>{{ quadrinho.title }}</h6>
+            </div>
+          </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
