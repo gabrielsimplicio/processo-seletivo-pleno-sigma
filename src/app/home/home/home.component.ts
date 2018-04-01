@@ -36,10 +36,7 @@ export class HomeComponent implements OnInit {
     this.quadrinhoService.obterTodosQuadrinhos()
     .subscribe(
       result => {
-        this.quadrinhos = result.data.results;
-        this.quadrinhos.map(item => {
-          item.urlImagem = `${item.thumbnail.path}.${item.thumbnail.extension}`;
-        });
+        this.quadrinhos = this.quadrinhoService.subscribeQuadrinhos(result);
       },
       error => console.error(error)
     );

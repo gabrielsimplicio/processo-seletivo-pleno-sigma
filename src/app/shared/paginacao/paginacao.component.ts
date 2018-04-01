@@ -1,16 +1,19 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Paginacao } from './paginacao.model';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-paginacao',
   templateUrl: './paginacao.component.html',
   styleUrls: ['./paginacao.component.scss']
 })
-export class PaginacaoComponent implements OnInit {
-@Output() alterarPaginacao = new EventEmitter<string>();
+export class PaginacaoComponent {
+  @Output() alterarPaginacao = new EventEmitter<string>();
+  @Input() paginacao: Paginacao;
+  @Input() totalRegistros: number;
 
-  constructor() {}
-
-  ngOnInit() {}
+  primeira() {
+    this.alterarPaginacao.emit('primeira');
+  }
 
   proximo() {
     this.alterarPaginacao.emit('proximo');
@@ -18,5 +21,9 @@ export class PaginacaoComponent implements OnInit {
 
   anterior() {
     this.alterarPaginacao.emit('anterior');
+  }
+
+  ultima() {
+    this.alterarPaginacao.emit('ultima');
   }
 }

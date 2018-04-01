@@ -1,4 +1,8 @@
 <div class="paginacao">
-    <button (click)="anterior()">anterior</button>
-    <button (click)="proximo()">proximo</button>
+  <pre>{{paginacao|json}} total:{{totalRegistros}} limit:{{paginacao.limit}}</pre>
+  <button (click)="primeira()" [disabled]="paginacao.offset == 0">primeira pagina</button>
+  <button (click)="anterior()" [disabled]="paginacao.offset == 0">pagina anterior</button>
+  <button (click)="proximo()"  [disabled]="paginacao.offset == (totalRegistros - paginacao.limit)">proxima pagina</button>
+  <button (click)="ultima()"   [disabled]="paginacao.offset == (totalRegistros - paginacao.limit)">ultima pagina</button>
+
 </div>

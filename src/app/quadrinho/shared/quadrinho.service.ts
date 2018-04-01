@@ -11,22 +11,36 @@ export class QuadrinhoService {
   constructor(private http: HttpBaseService) { }
 
   obterTodosQuadrinhosPaginado(paginacao): Observable<any> {
-    return this.http.get(`comics?format=comic&limit=${paginacao.limit}&offset=${paginacao.offset}&apikey=${environment.apiKey}`);
+    return this.http.get(`comics?hasDigitalIssue=true&limit=${paginacao.limit}&offset=${paginacao.offset}&apikey=${environment.apiKey}`);
   }
 
   obterTodosQuadrinhos(): Observable<any> {
-    return this.http.get(`comics?apikey=${environment.apiKey}`);
+    return this.http.get(`comics?hasDigitalIssue=true&apikey=${environment.apiKey}`);
   }
 
   obterQuadrinhos(textoPesquisa: string, paginacao: Paginacao): Observable<any> {
-    return this.http.get(`comics?format=comic&limit=${paginacao.limit}&offset=${paginacao.offset}&apikey=${environment.apiKey}&titleStartsWith=${textoPesquisa}`);
+    return this.http.get(`comics?hasDigitalIssue=true&limit=${paginacao.limit}&offset=${paginacao.offset}&apikey=${environment.apiKey}&titleStartsWith=${textoPesquisa}`);
   }
 
   obterQuadrinhoPorId(id: number): Observable<any> {
-    return this.http.get(`comics/${id}?format=comic&apikey=${environment.apiKey}`);
+    return this.http.get(`comics/${id}?hasDigitalIssue=true&apikey=${environment.apiKey}`);
   }
 
   obterQuadrinhoPorPersonagem(id: number): Observable<any> {
-    return this.http.get(`character/${id}/comics?format=comic&format=comic&limit=10&orderBy=-focDate&apikey=${environment.apiKey}`);
+    return this.http.get(`characters/${id}/comics?apikey=${environment.apiKey}`);
   }
+
+  subscribeQuadrinhos(response) {
+    const quadrinhos = [];
+    response.data.results.map(item => {
+      if (item.images.length > 0) {
+        item.urlImagem = `${item.images[0].path}.${item.images[0].extension}`;
+      } else {
+        item.urlImagem = `${item.thumbnail.path}.${item.thumbnail.extension}`;
+      }
+        quadrinhos.push(item);
+    });
+    return quadrinhos;
+  }
+
 }

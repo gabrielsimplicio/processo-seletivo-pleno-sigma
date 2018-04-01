@@ -13,7 +13,7 @@ export class PersonagemService {
   }
 
   obterPersonagemPorId(id: number): Observable<any> {
-    return this.http.get(`characters/${id}?apikey=${environment.apiKey}`);
+    return this.http.get(`characters/${id}?orderBy=-modified&apikey=${environment.apiKey}`);
   }
 
   obterPersonagemPorQuadrinho(id: number): Observable<any> {

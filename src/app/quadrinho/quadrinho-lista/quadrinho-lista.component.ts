@@ -57,14 +57,8 @@ export class QuadrinhoListaComponent implements OnInit {
     }
     acao.subscribe(
       response => {
-        this.quadrinhos = [];
-        response.data.results.map(item => {
-          debugger
-          if (item.images.length > 0) {
-            item.urlImagem = `${item.thumbnail.path}.${item.thumbnail.extension}`;
-            this.quadrinhos.push(item);
-          }
-        });
+        this.paginacaoService.totalRegistros = response.data.total;
+        this.quadrinhos = this.quadrinhoService.subscribeQuadrinhos(response);
       },
       error => console.error(error)
     );

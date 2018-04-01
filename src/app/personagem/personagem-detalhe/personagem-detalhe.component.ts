@@ -43,7 +43,7 @@ export class PersonagemDetalheComponent implements OnInit {
     this.quadrinhosService
     .obterQuadrinhoPorPersonagem(this.id)
     .subscribe(
-      response => this.quadrinhos = response.data.results,
+      response => this.quadrinhos = this.quadrinhosService.subscribeQuadrinhos(response),
       error => console.error(error)
     );
   }

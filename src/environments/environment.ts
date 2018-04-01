@@ -7,4 +7,5 @@ export const environment = {
   production: false,
   urlApiMarvel: 'https://gateway.marvel.com',
   apiKey: '58536ac515c0baa341e9cb73da820c9e',
+  path_image_not_available: 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available'
 };
