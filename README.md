@@ -34,8 +34,8 @@ Site Single Page Application que busca e lista através da API da Marvel, todos 
 ## Solução adotada
 
 * **Framework** 
-    * O framework escolhido foi o Angular, juntamente com o Angular CLI seguindo os padrões do Style Guide do Angular
-    * O motivo de usar o Angular foi para como forma de ganhar mais experiência com desafios no framework.
+    * O framework escolhido foi o Angular.
+    * Com experiência em React, mas como forma de desafio, escolhi o Angular para que de certa forma ganhasse mais experiência com outro framework, usando o Angular CLI, type script, sass como pré-processador css e seguindo os padrões do Style Guide do Angular, sendo assim, abrangindo mais meus conhecimentos.
 * **Pré-processadores**
     * Foi utilizado o pré-processador SASS ao invés de apenas CSS puro, para facilitar no desenvolvimento e organização dos arquivos css.
 * **Bootstrap**
