@@ -1,0 +1,179 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+/*
+.card-image :hover{
+  transition-duration: 1s;
+  opacity: 0.2
+}
+*/
+
+.divBody {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.imgThumb {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+   
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+}
+.imgThumb * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+}
+.imgThumb img {
+    opacity: 1;
+    width: 100%;
+}
+.imgThumb:after,
+.imgThumb:before,
+.imgThumb figcaption:after,
+.imgThumb figcaption:before {
+    background: #0a0a0a;
+    width: 25%;
+    position: absolute;
+    content: '';
+    opacity: 0;
+    -webkit-transition: all 0.3s steps(4);
+    transition: all 0.3s steps(4);
+    z-index: 1;
+    bottom: 100%;
+    top: 0;
+}
+.imgThumb:before {
+    left: 0;
+    -webkit-transition-delay: 0;
+    transition-delay: 0;
+}
+.imgThumb:after {
+    left: 25%;
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+}
+.imgThumb figcaption:before {
+    left: 50%;
+    -webkit-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+    z-index: -1;
+}
+.imgThumb figcaption:after {
+    left: 75%;
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+    z-index: -1;
+}
+.imgThumb figcaption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    padding: 30px;
+}
+.imgThumb h6,
+.imgThumb p,
+.imgThumb .icons {
+    margin: 0;
+    width: 100%;
+    opacity: 0;
+}
+.imgThumb h6 {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+.imgThumb p {
+    font-weight: 300;
+}
+.imgThumb .icons {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+}
+.imgThumb i {
+    padding: 0px 10px;
+    display: inline-block;
+    font-size: 24px;
+    color: #ffffff;
+    text-align: center;
+    opacity: 0.8;
+}
+.imgThumb i:hover {
+    opacity: 1;
+}
+.imgThumb:hover:after,
+.imgThumb.hover:after,
+.imgThumb:hover:before,
+.imgThumb.hover:before,
+.imgThumb:hover figcaption:after,
+.imgThumb.hover figcaption:after,
+.imgThumb:hover figcaption:before,
+.imgThumb.hover figcaption:before {
+    bottom: 0;
+    opacity: 0.8;
+}
+.imgThumb:hover figcaption h6,
+.imgThumb.hover figcaption h6,
+.imgThumb:hover figcaption p,
+.imgThumb.hover figcaption p,
+.imgThumb:hover figcaption .icons,
+.imgThumb.hover figcaption .icons {
+    -webkit-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+}
+.imgThumb:hover figcaption h6,
+.imgThumb.hover figcaption h6,
+.imgThumb:hover figcaption .icons,
+.imgThumb.hover figcaption .icons {
+    opacity: 1;
+}
+.imgThumb:hover figcaption p,
+.imgThumb.hover figcaption p {
+    opacity: 0.7;
+}
