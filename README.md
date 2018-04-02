@@ -34,7 +34,8 @@ Site Single Page Application que busca e lista através da API da Marvel, todos 
 ## Solução adotada
 
 * **Framework** 
-    * O framework escolhido foi o Angular, juntamente com o Angular CLI seguindo os padrões do Style Guide do Angular, como forma de ganhar mais experiência com desafios.
+    * O framework escolhido foi o Angular, juntamente com o Angular CLI seguindo os padrões do Style Guide do Angular
+    * O motivo de usar o Angular foi para como forma de ganhar mais experiência com desafios no framework.
 * **Pré-processadores**
     * Foi utilizado o pré-processador SASS ao invés de apenas CSS puro, para facilitar no desenvolvimento e organização dos arquivos css.
 * **Bootstrap**
@@ -42,8 +43,8 @@ Site Single Page Application que busca e lista através da API da Marvel, todos 
 
 ## Como instalar
 **Antes de qualquer coisa, prepare o ambiente de desenvolvimento** 
-    * Instale o [Node.js e o npm]
-    * Instale o [Git]
+* Instale o [Node.js e o npm]
+* Instale o [Git]
 
 **Instale o Angular CLI globalmente.**
 ```sh
