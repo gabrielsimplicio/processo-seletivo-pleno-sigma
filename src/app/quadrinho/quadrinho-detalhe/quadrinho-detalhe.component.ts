@@ -1,32 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap  } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+
+import { QuadrinhoService } from './../shared/quadrinho.service';
+import { PersonagemService } from './../../personagem/shared/personagem.service';
 
 import { Quadrinho } from './../shared/quadrinho.model';
-import { QuadrinhoService } from './../shared/quadrinho.service';
-
 import { Personagem } from './../../personagem/shared/personagem.model';
-import { PersonagemService } from './../../personagem/shared/personagem.service';
 
 @Component({
   selector: 'app-quadrinho',
   templateUrl: './quadrinho-detalhe.component.html',
   styleUrls: ['./quadrinho-detalhe.component.scss'],
-  providers: [ QuadrinhoService, PersonagemService ]
+  providers: [QuadrinhoService, PersonagemService]
 })
 export class QuadrinhoDetalheComponent implements OnInit {
-
   id: number;
   imagem: string;
   quadrinho: Quadrinho[];
   personagens: Personagem[];
 
-  constructor (
+  constructor(
     private quadrinhoService: QuadrinhoService,
     private personagemService: PersonagemService,
     private activatedRoute: ActivatedRoute,
     private router: Router
-  ) { }
-
+  ) {}
 
   ngOnInit() {
     this.id = +this.activatedRoute.snapshot.paramMap.get('id');
@@ -39,9 +37,7 @@ export class QuadrinhoDetalheComponent implements OnInit {
   }
 
   carregarQuadrinhoPorId() {
-    this.quadrinhoService
-    .obterQuadrinhoPorId(this.id)
-    .subscribe(
+    this.quadrinhoService.obterQuadrinhoPorId(this.id).subscribe(
       response => {
         const quadrinho = this.quadrinhoService.subscribeQuadrinhos(response);
         this.quadrinho = quadrinho[0];
@@ -52,10 +48,13 @@ export class QuadrinhoDetalheComponent implements OnInit {
 
   carregarPersonagemPorQuadrinho() {
     this.personagemService
-    .obterPersonagemPorQuadrinho(this.id)
-    .subscribe(
-      response => this.personagens = this.personagemService.subscribePersonagens(response),
-      error => console.error(error),
-    );
+      .obterPersonagemPorQuadrinho(this.id)
+      .subscribe(
+        response =>
+          (this.personagens = this.personagemService.subscribePersonagens(
+            response
+          )),
+        error => console.error(error)
+      );
   }
 }

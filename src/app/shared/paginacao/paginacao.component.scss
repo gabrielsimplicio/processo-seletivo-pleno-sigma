@@ -1,18 +1,18 @@
 .paginacao {
   float: right;
   position: relative;
-  &{
+  & {
     .btn-paginacao {
       float: left;
-      margin-right:5px;
+      margin-right: 5px;
     }
 
-    .pag-titulo{
-      &{
+    .pag-titulo {
+      & {
         .nopadding {
           padding: 0 !important;
           margin: 0 !important;
-       }
+        }
       }
     }
   }

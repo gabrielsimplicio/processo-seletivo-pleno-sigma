@@ -7,14 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  constructor(private router: Router) {}
 
   navigate(route: string) {
-    this.router.navigate( [route] );
+    this.router.navigate([route]);
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

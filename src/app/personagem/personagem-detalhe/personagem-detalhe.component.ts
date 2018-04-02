@@ -33,23 +33,29 @@ export class PersonagemDetalheComponent implements OnInit {
 
   carregarPersonagemPorId() {
     this.personagemService
-    .obterPersonagemPorId(this.id)
-    .subscribe(
-      response => this.personagem = response.data.results[0],
-      error => console.error(error)
-    );
+      .obterPersonagemPorId(this.id)
+      .subscribe(
+        response => {
+          const personagem = this.personagemService.subscribePersonagens(response);
+          this.personagem = personagem[0];
+        },
+        error => console.error(error)
+      );
   }
 
-  visualizarPaginaDetalhes(id) {
+  visualizarPaginaQuadrinhoDetalhes(id) {
     this.router.navigate(['quadrinho', id]);
   }
 
   carregarListaDeQuadrinhosPorPersonagem() {
     this.quadrinhosService
-    .obterQuadrinhoPorPersonagem(this.id)
-    .subscribe(
-      response => this.quadrinhos = this.quadrinhosService.subscribeQuadrinhos(response),
-      error => console.error(error)
-    );
+      .obterQuadrinhoPorPersonagem(this.id)
+      .subscribe(
+        response =>
+          (this.quadrinhos = this.quadrinhosService.subscribeQuadrinhos(
+            response
+          )),
+        error => console.error(error)
+      );
   }
 }

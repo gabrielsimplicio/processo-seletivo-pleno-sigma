@@ -5,14 +5,14 @@
   top: 0;
   z-index: 99999;
   background-color: black;
-  opacity: .9;
+  opacity: 0.9;
   align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  &{
-    img{
+  & {
+    img {
       margin: auto;
     }
   }

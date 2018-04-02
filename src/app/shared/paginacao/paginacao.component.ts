@@ -1,4 +1,4 @@
-import { Paginacao } from './paginacao.model';
+import { Paginacao } from './shared/paginacao.model';
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
@@ -10,6 +10,7 @@ export class PaginacaoComponent {
   @Output() alterarPaginacao = new EventEmitter<string>();
   @Input() paginacao: Paginacao;
   @Input() totalRegistros: number;
+  @Input() totalDePaginas: number;
 
   primeira() {
     this.alterarPaginacao.emit('primeira');

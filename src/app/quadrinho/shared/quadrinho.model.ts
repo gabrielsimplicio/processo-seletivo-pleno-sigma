@@ -9,4 +9,3 @@ export class Quadrinho {
   images: Array<Object>;
   urlImagem: string;
 }
-

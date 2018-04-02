@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
-
 import { SharedModule } from './shared/shared.module';
 import { HttpBaseService } from './shared/http-base.service';
 
@@ -15,11 +14,8 @@ import { PersonagemModule } from './personagem/personagem.module';
 import { QuadrinhoModule } from './quadrinho/quadrinho.module';
 import { RouteModule } from './route.module';
 
-
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     HttpModule,
@@ -29,7 +25,7 @@ import { RouteModule } from './route.module';
     QuadrinhoModule,
     RouteModule
   ],
-  providers: [  HttpBaseService ],
+  providers: [HttpBaseService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

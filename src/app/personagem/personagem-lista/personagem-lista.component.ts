@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { PersonagemService } from './../shared/personagem.service';
-import { PaginacaoService } from './../../shared/paginacao/paginacao.service';
+import { PaginacaoService } from './../../shared/paginacao/shared/paginacao.service';
 
 import { Personagem } from './../shared/personagem.model';
-import { Paginacao } from '../../shared/paginacao/paginacao.model';
+import { Paginacao } from '../../shared/paginacao/shared/paginacao.model';
 
 @Component({
   selector: 'app-personagem-lista',
@@ -23,14 +23,14 @@ export class PersonagemListaComponent implements OnInit {
     private paginacaoService: PaginacaoService
   ) {}
 
-  navigate(route: string, id: number) {
-    this.router.navigate([route, id]);
-  }
-
   ngOnInit() {
     this.textoPesquisa = '';
     this.paginacaoService.paginacao = new Paginacao(0);
     this.carregarListaDePersonagens();
+  }
+
+  visualizarPaginaPersonagemDetalhes(id: number) {
+    this.router.navigate(['personagem', id]);
   }
 
   alterarPaginacao(event) {
@@ -42,7 +42,6 @@ export class PersonagemListaComponent implements OnInit {
     this.paginacaoService.paginacao = new Paginacao(0);
     this.carregarListaDePersonagens();
   }
-
 
   carregarListaDePersonagens() {
     let acao;
@@ -59,7 +58,10 @@ export class PersonagemListaComponent implements OnInit {
     acao.subscribe(
       response => {
         this.paginacaoService.totalRegistros = response.data.total;
-        this.personagens = this.personagemService.subscribePersonagens(response);
+        this.paginacaoService.totalDePaginas = Math.floor(response.data.total / this.paginacaoService.paginacao.limit);
+        this.personagens = this.personagemService.subscribePersonagens(
+          response
+        );
       },
       error => console.error(error)
     );

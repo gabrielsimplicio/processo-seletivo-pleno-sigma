@@ -5,10 +5,7 @@ import { PersonagemListaComponent } from './personagem-lista/personagem-lista.co
 import { PersonagemDetalheComponent } from './personagem-detalhe/personagem-detalhe.component';
 
 @NgModule({
-  imports: [
-    SharedModule,
-    FormsModule
-  ],
+  imports: [SharedModule, FormsModule],
   declarations: [PersonagemListaComponent, PersonagemDetalheComponent]
 })
-export class PersonagemModule { }
+export class PersonagemModule {}

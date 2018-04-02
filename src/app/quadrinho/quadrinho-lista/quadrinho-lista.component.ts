@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { PaginacaoService } from './../../shared/paginacao/paginacao.service';
+import { PaginacaoService } from './../../shared/paginacao/shared/paginacao.service';
 import { QuadrinhoService } from './../shared/quadrinho.service';
 
 import { Quadrinho } from './../shared/quadrinho.model';
-import { Paginacao } from '../../shared/paginacao/paginacao.model';
+import { Paginacao } from '../../shared/paginacao/shared/paginacao.model';
 
 @Component({
   selector: 'app-lista-quadrinhos',
@@ -29,7 +29,7 @@ export class QuadrinhoListaComponent implements OnInit {
     this.carregarListaDeQuadrinhos();
   }
 
-  visualizarPaginaDetalhes(id) {
+  visualizarPaginaQuadrinhoDetalhes(id) {
     this.router.navigate(['quadrinho', id]);
   }
 
@@ -58,6 +58,7 @@ export class QuadrinhoListaComponent implements OnInit {
     acao.subscribe(
       response => {
         this.paginacaoService.totalRegistros = response.data.total;
+        this.paginacaoService.totalDePaginas = Math.floor(response.data.total / this.paginacaoService.paginacao.limit);
         this.quadrinhos = this.quadrinhoService.subscribeQuadrinhos(response);
       },
       error => console.error(error)

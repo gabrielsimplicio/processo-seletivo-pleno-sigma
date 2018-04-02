@@ -23,36 +23,39 @@ export class HomeComponent implements OnInit {
     private router: Router
   ) {}
 
-  navigate(route: string, id: number) {
-    this.router.navigate([route, id]);
-  }
-
   ngOnInit() {
     this.carregarListaDeTodosQuadrinhos();
     this.carregarListaDePersonagens();
   }
 
+  visualizarPaginaQuadrinhoDetalhes(id: number) {
+    this.router.navigate(['quadrinho', id]);
+  }
+
+  visualizarPaginaPersonagemDetalhes(id: number) {
+    this.router.navigate(['personagem', id]);
+  }
+
   carregarListaDeTodosQuadrinhos() {
     this.quadrinhoService
-    .obterOsDozeQuadrinhosMaisRecentes()
-    .subscribe(
-      result => {
-        this.quadrinhos = this.quadrinhoService.subscribeQuadrinhos(result);
-      },
-      error => console.error(error)
-    );
+      .obterOsDozeQuadrinhosMaisRecentes()
+      .subscribe(
+        response =>
+          (this.quadrinhos = this.quadrinhoService.subscribeQuadrinhos(
+            response
+          )),
+        error => console.error(error)
+      );
   }
 
   carregarListaDePersonagens() {
     this.personagemService
       .obterTodosOsDozePersonagensMaisRecente()
       .subscribe(
-        result => {
-          this.personagens = result.data.results;
-          this.personagens.map(item => {
-            item.urlImagem = `${item.thumbnail.path}.${item.thumbnail.extension}`;
-          });
-        },
+        response =>
+          (this.personagens = this.personagemService.subscribePersonagens(
+            response
+          )),
         error => console.error(error)
       );
   }

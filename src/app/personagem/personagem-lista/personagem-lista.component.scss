@@ -1,8 +1,8 @@
-.personagens{
-  &{
+.personagens {
+  & {
     margin-top: 170px;
   }
-  .titulo{
+  .titulo {
     font-size: 26px;
     padding: 15px 0;
     border-bottom: 3px solid red;
@@ -72,15 +72,14 @@
   margin-right: 5px;
 }
 
-.requisicoes{
-  &{
+.requisicoes {
+  & {
     margin-bottom: 5px;
   }
-  form{
+  form {
     padding-top: 30px;
   }
   .jumbotron {
     padding: 2rem 2rem;
   }
 }
-

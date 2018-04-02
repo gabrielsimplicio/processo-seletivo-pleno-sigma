@@ -1,13 +1,15 @@
 <div class="container">
   <div class="quadrinhos">
-      <div class="jumbotron">
+    <div class="jumbotron">
       <div class="row">
         <div class="col">
-          <div class="titulo"><h1>Quadrinhos mais recentes</h1></div>
+          <div class="titulo">
+            <h1>Quadrinhos mais recentes</h1>
+          </div>
         </div>
       </div>
-      <div class="grid row" >
-        <div (click)="navigate('quadrinho', quadrinho.id)" class="quadrinho col-sm-3" *ngFor="let quadrinho of quadrinhos">
+      <div class="grid row">
+        <div (click)="visualizarPaginaQuadrinhoDetalhes(quadrinho.id)" class="quadrinho col-sm-3" *ngFor="let quadrinho of quadrinhos">
           <div class="conteudo">
             <img [src]="quadrinho.urlImagem" class="img-fluid" />
             <h5>{{ quadrinho.title }}</h5>
@@ -18,20 +20,24 @@
   </div>
 
   <div class="personagem">
-      <div class="jumbotron">
+    <div class="jumbotron">
       <div class="row">
         <div class="col-sm-12">
-          <div class="titulo"><h1>Personagens mais recentes</h1></div>
+          <div class="titulo">
+            <h1>Personagens mais recentes</h1>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-4" *ngFor="let personagem of personagens">
-          <div  class="personagem " >
+          <div class="personagem ">
             <div class="conteudo">
-              <img [src]="personagem.urlImagem"  class="img-fluid" />
+              <img [src]="personagem.urlImagem" class="img-fluid" />
               <div class="retina">
                 <p>{{ personagem.name }}</p>
-                <a ><span (click)="navigate('personagem', personagem.id)" >Veja mais</span></a>
+                <a>
+                  <span (click)="visualizarPaginaPersonagemDetalhes(personagem.id)">Veja mais</span>
+                </a>
               </div>
             </div>
           </div>

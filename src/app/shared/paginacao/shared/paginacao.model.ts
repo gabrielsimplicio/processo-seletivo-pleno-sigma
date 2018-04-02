@@ -1,4 +1,4 @@
 export class Paginacao {
-  limit = 10;
+  limit = 12;
   constructor(public offset: number) {}
 }

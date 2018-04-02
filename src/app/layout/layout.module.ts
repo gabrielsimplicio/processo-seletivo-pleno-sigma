@@ -6,10 +6,8 @@ import { TopoComponent } from './layout/topo/topo.component';
 import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
-  imports: [
-    SharedModule
-  ],
+  imports: [SharedModule],
   exports: [LayoutComponent],
   declarations: [LayoutComponent, NavComponent, TopoComponent, FooterComponent]
 })
-export class LayoutModule { }
+export class LayoutModule {}

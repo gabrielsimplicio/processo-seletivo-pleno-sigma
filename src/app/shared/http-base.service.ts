@@ -1,5 +1,3 @@
-import { LoadingService } from './loading/loading.service';
-import { environment } from './../../environments/environment';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 
@@ -7,6 +5,9 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/finally';
 
+import { LoadingService } from './loading/shared/loading.service';
+
+import { environment } from './../../environments/environment';
 
 @Injectable()
 export class HttpBaseService {
