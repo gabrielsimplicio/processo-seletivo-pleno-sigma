@@ -1,0 +1,61 @@
+.personagem {
+  margin-top: 170px;
+  & {
+    .quadrinhos {
+      & {
+        .quadrinho {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+.titulo {
+  padding: 15px 0;
+  border-bottom: 3px solid red;
+  margin-bottom: 15px;
+}
+.quadrinhos {
+  &{
+    .titulo {
+      padding: 15px 0;
+      border-bottom: 3px solid red;
+      margin-bottom: 15px;
+    }
+    .quadrinho {
+      & {
+        .conteudo {
+          box-shadow: 0px 3px 9px 1px rgba(0, 0, 0, 0.5);
+          cursor: pointer;
+          &:hover {
+            box-shadow: 0px 3px 9px 1px rgba(0, 0, 0, 1);
+            cursor: pointer;
+          }
+          h5 {
+            padding: 5px;
+            border: 1px solid #000;
+            min-height: 108px;
+            margin-bottom: 15px;
+          }
+        }
+        img {
+          min-height: 372px;
+          box-shadow: 0px 3px 9px 1px rgba(255, 254, 254, 0.5);
+        }
+        .descricao {
+          div {
+            padding-top: 5px;
+            padding-bottom: 5px;
+          }
+          span {
+            font-weight: bold;
+          }
+          .criador {
+            padding-top: 0px;
+            padding-bottom: 0px;
+          }
+        }
+      }
+    }
+  }
+}

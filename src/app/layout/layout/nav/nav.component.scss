@@ -1,0 +1,25 @@
+.menu {
+  & {
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 18px;
+    border-bottom: 2px solid #343a40 !important;
+  }
+  .nav {
+    .nav-item {
+      cursor: pointer;
+      padding: 5px 0;
+
+      &:hover {
+        background-color: red;
+        color: #000000;
+        font-weight: bold;
+      }
+    }
+    .active {
+      background-color: red;
+      color: #000000;
+      font-weight: bold;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="paginacao">
+  <div class="pag-titulo row">
+    <div class="col-sm-12 nopadding">
+      <h5>{{ mostraPaginaAtual(paginacao.offset) }} de {{ totalDePaginas }} páginas</h5>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn-paginacao btn btn-dark" (click)="primeira()" [disabled]="paginacao.offset == 0">Primeira </button>
+    <button class="btn-paginacao btn btn-dark" (click)="anterior()" [disabled]="paginacao.offset == 0">Anterior</button>
+    <button class="btn-paginacao btn btn-dark" (click)="proximo()" [disabled]="paginacao.offset == (totalRegistros - paginacao.limit)">Próxima </button>
+    <button class="btn-paginacao btn btn-dark" (click)="ultima()" [disabled]="paginacao.offset == (totalRegistros - paginacao.limit)">Última </button>
+  </div>
+</div>

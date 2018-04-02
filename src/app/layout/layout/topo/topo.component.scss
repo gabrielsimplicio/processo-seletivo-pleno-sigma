@@ -1,0 +1,14 @@
+.navbar-brand {
+  img{
+    width: 206px;
+    height: 82px;;
+  }
+}
+.nav-link {
+  &{
+    color: #C1E4FF
+  }
+  &:hover{
+    color: #FFF
+  }
+}

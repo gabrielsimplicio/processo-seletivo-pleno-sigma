@@ -1,61 +1,73 @@
-# Processo Seletivo Front-End Pleno da Sigma/TJMT
+# Site de quadrinhos da Marvel
 
-Bem-vindo ao processo seletivo para desenvolvedor front-end pleno do TJMT/Sigma!
+Site Single Page Application que busca e lista através da API da Marvel, todos seus quadrinhos e personagens.
 
-## O desafio
+## Funcionamento
 
-Crie uma Single Page Application de uma loja de quadrinhos utilizando a API da Marvel para todos os consumos de dados.
-Endereço: https://developer.marvel.com
+### Páginas
 
-## Requisitos
+##### O site está dividido em 5 páginas
 
-### Quadrinhos (comics)
+* **/home**
+    * Lista os 12 quadrinhos mais recentes e os 12 personagens mais recentes.
+* **/quadrinhos**
+    * Lista todos os quadrinhos dísponíveis pela Marvel.
+    * Sistema de paginação, mostrando 12 quadrinhos por página.
+    * Campo de busca, para pesquisar um quadrinho pelo nome.
+* **/quadrinho/id**
+    * Lista os detalhes do quadrinho selecionado.
+    * Caso tenha, lista os personagem que são relacionados à esse quadrinho.
+* **/personagens**
+    * Lista todos os personagens dísponíveis pela Marvel, listando 12 por página.
+    * Sistema de paginação, mostrando 12 personagens por página.
+    * Campo de busca, para pesquisar um personagem pelo nome.
+* **/personagem/id**
+    * Lista os detalhes do personagem selecionado.
+    * Caso tenha, lista os quadrinhos que são relacionados à esse personagem.
 
-* Página que tenha uma listagem de quadrinhos
-* Página que tenha a visualização dos detalhes de um quadrinho
-    * Essa página deve conter, também, uma listagem com os personagens que estão no quadrinho.
+### Páginação
+* O site possui paginação nas páginas /quadrinhos e /personagens, onde cada página mostra 12 registros.
 
-### Personagens (characters)
+### Busca
+* O site possui busca nas páginas /quadrinhos e /personagens, através do título do quadrinho ou pelo nome do personagem.
 
-* Página que tenha uma listagem de personagens
-* Página que tenha a visualização dos detalhes de um personagem
-    * Essa página deve conter, também, uma listagem com os quadrinhos nas quais o personagem faz parte.
+## Solução adotada
 
-### Requisitos obrigatórios
+* **Framework** 
+    * O framework escolhido foi o Angular.
+    * Com experiência em React, mas como forma de desafio, escolhi o Angular para que de certa forma ganhasse mais experiência com outro framework, usando o Angular CLI, type script, sass como pré-processador css e seguindo os padrões do Style Guide do Angular, sendo assim, abrangindo mais meus conhecimentos.
+* **Pré-processadores**
+    * Foi utilizado o pré-processador SASS ao invés de apenas CSS puro, para facilitar no desenvolvimento e organização dos arquivos css.
+* **Bootstrap**
+    * Foi utilizado bootstrap 4.0 para o responsivo. 
 
-* Deve ser uma SPA.
-* A sua aplicação deve conter um arquivo README explicando o funcionamento e a solução adotada na sua implementação do desafio.
+## Como instalar
+**Antes de qualquer coisa, prepare o ambiente de desenvolvimento** 
+* Instale o [Node.js e o npm]
+* Instale o [Git]
 
-### Observações/Dicas
+**Instale o Angular CLI globalmente.**
+```sh
+npm install -g @angular/cli
+ ```
+ 
+ **Faça um clone do projeto e acesse o mesmo.**
+ ```sh
+git clone https://github.com/Cristianotx/processo-seletivo-pleno-sigma.git
+cd processo-seletivo-pleno-sigma-master
+ ```
+ **Instale as dependências e inicie o servidor**
+  ```sh
+npm install
+ng serve
+ ```
+License
+----
 
-* Não limite-se às funcionalidades acima. Qualquer outra feature extra (e não obrigatória) é bem-vinda. Por exemplo:
-    * Campo de pesquisa nas páginas de listagem
-    * Funcionalidade para adicionar produtos em um carrinho
-    * Paginação
-* O layout é por sua conta.
-* A arquitetura é por sua conta.
-* Qualquer framework SPA (Vue.js, React ou Angular 2+) é permitido
-* Usar javascript puro é permitido
-* Usar CSS puro é permitido
-* Usar qualquer pré-processador (LESS ou SASS) é permitido
-* Não se esqueça da otimização da velocidade da aplicação nem da experiência do usuário.
-* Alguns endereços de imagens disponibilizadas pela API estão quebrando. Existe uma forma de resolução. Faz parte do desafio resolver.
+MIT
 
-## Critérios de avaliação
-
-* Usabilidade
-* Criatividade
-* Código limpo e organizado
-* Documentação do projeto (readme)
-
-## Procedimento
-
-* Faça um fork do projeto https://github.com/gabrielsimplicio/processo-seletivo-pleno-sigma
-* Ao finalizar a sua aplicação, crie um pull request no projeto de origem.
-* Para ter acesso à API, você deve ter uma key. Basta cadastrar-se no site da marvel e obtê-la. É totalmente gratuita.
-
-## Prazo
-* O prazo para criar pull requests é até o dia 02/04/2018, às 12h.
-
-### Dê o seu melhor!
-### Boa prova! ;)
+   [Git]: <https://git-scm.com/downloads>
+   [Bootstrap]: <http://getbootstrap.com/>
+   [node.js  e o npm]: <http://nodejs.org>
+   [jQuery]: <http://jquery.com>
+   [AngularJS]: <http://angularjs.org>
