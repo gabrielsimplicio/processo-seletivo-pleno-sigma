@@ -1,12 +1,8 @@
 .Characters {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
 
   padding: 20px 30px;
 
   h1 {
-    // padding-left: 10px;
     margin: 0px 10px 15px 15px;
   }
 
@@ -55,4 +51,39 @@
     margin: 5px 0;
     text-align: center;
   }
+}
+
+.CharacterInfo {
+
+  padding: 20px 30px;
+
+  h1 {
+    margin: 0 0px 15px 0px;
+  }
+
+  .img-character {
+    width: 250px;
+    margin-left: 10px;
+    float: right;
+  }
+
+  .CharacterComics {
+    padding: 20px 0;
+
+    clear: both;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    li {
+      padding: 15px 10px;
+      border-bottom: 1px solid #d0d0d0;
+    }
+
+  }
+
+
 }

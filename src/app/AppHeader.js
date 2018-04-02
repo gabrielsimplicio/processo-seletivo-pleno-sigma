@@ -15,7 +15,7 @@ const AppHeader = () => (
 
       <nav className="App-navbar">
         <ul>
-          <li><NavLink to="/home" activeClassName="selected">Home</NavLink></li>
+          {/* <li><NavLink to="/home" activeClassName="selected">Home</NavLink></li> */}
           <li><NavLink to="/comics" activeClassName="selected">Quadrinhos</NavLink></li>
           <li><NavLink to="/characters" activeClassName="selected">Personagens</NavLink></li>
         </ul>

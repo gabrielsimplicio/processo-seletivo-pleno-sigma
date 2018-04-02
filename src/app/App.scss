@@ -1,3 +1,11 @@
+.App-content {
+  padding: 0 100px;
+
+  @media screen and (max-width: 1000px) {
+    padding: 0 20px;
+  }
+}
+
 .App-header {
   display: flex;
   color: #ffffff;

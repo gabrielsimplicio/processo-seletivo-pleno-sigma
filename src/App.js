@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 
 import AppHeader from "./app/AppHeader";
 import Home from './app/Home';
 import Comics from './comics/Comics';
 import ComicInfo from './comics/ComicInfo';
 import Characters from './characters/Characters';
+import CharacterInfo from './characters/CharacterInfo';
 
 import './app/App.scss';
 
@@ -23,7 +24,9 @@ class App extends Component {
             <Route path="/comics" component={Comics}/>
             <Route path="/comic/:id" component={ComicInfo}/>
             <Route path="/characters" component={Characters}/>
+            <Route path="/character/:id" component={CharacterInfo}/>
 
+            <Redirect to="/comics"/>
           </div>
 
         </div>

@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import './PaginationWidget.scss'
+import './PaginationWidget.scss';
 
 export const getPages = (total, perPage) => {
   perPage = !!perPage ? perPage : 1;
