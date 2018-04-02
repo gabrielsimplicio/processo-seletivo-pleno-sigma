@@ -2,7 +2,14 @@
 
 ## A solução
 
-Para a solução, eu optei por utilizar ReactJS, levei em consideração a reutilização dos componentes ao máximo possivel.
+Para a solução, eu optei por utilizar ReactJS, a nível de conhecimento mesmo, pois foi minha primeira experiência com React. Levei em consideração a reutilização dos componentes ao máximo possivel, para isso utilizei o redux, que me auxilia na comunicação entre os componentes.
+
+## Funcionalidades
+  * Listar Quadrinhos  (Busca, Paginação, Adicionar Carrinho)
+  * Listar Personagem (Busca, Paginação)
+  * Detalhes Quadrinho (Busca, Paginação, Listar Personagem)
+  * Detalhes Personagem (Busca, Paginação, Listar Quadrinhos)
+  * Carrinho (Remover Item do Carrinho)
 
 ## Dependências
 * [ReactJS 16.3.0](https://www.npmjs.com/package/react)

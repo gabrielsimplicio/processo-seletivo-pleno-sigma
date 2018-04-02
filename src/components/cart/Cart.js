@@ -49,7 +49,7 @@ class Cart extends Component {
                 <div className={'row'}>
                     <div className="col s12">
                         <h5>Itens: {this.props.comics.length}</h5>
-                        <h5>Total Price: ${this.props.totalPrice}</h5>
+                        <h5>Total Price: ${this.props.totalPrice.toFixed(2)}</h5>
                     </div>
                     {this.props.comics.map((n, i) =>
                         <div key={i} className="col s12 m3">
