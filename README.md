@@ -52,7 +52,7 @@ npm install -g @angular/cli
  
  **Faça um clone do projeto e acesse o mesmo.**
  ```sh
-git clone https://github.com/Cristianotx/processo-seletivo-pleno-sigma
+git clone https://github.com/Cristianotx/processo-seletivo-pleno-sigma.git
 cd processo-seletivo-pleno-sigma-master
  ```
  **Instale as dependências e inicie o servidor**
