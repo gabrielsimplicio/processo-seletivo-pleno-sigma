@@ -1,0 +1,448 @@
+@charset "UTF-8";
+@import "reset.css";
+
+html, body{width:100%; height:100%;}
+
+body{background-color: #000000;}
+
+/* Main (tag: main) */
+
+main{
+    width:1024px;
+    height:100%;
+    margin: 0 auto;
+}
+
+/* ----------------- */
+
+/* Header (tag - header) */
+
+header{
+    width: 1024px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;    
+}
+
+header div.logo{
+    display: inline-block;
+    margin: 20px 0;
+}
+
+header nav{
+    text-align: right;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+header nav ul{
+    display: inline-flex;
+}
+
+header nav ul li{
+    flex-wrap: wrap;
+    padding: 10px 20px;
+}
+
+header nav ul li a{
+    font-family: 'Teko', sans-serif;    
+    font-size: 2rem;
+    color: #f5c23d;
+    transition: color 0.3s linear;
+    text-decoration: none;
+}
+
+header nav ul li a:hover{
+    color: #ffffff;
+}
+
+/* ----------------------- */
+
+/* Section Home (id: home) */
+
+section#home{
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding: 100px 0;
+    box-sizing: border-box;
+    color: #f5c23d;
+    font-family: 'Teko', sans-serif;
+}
+section#home h1{
+    font-size: 3rem;
+    font-style: italic;
+    font-weight: 700;
+}
+section#home h3{
+    font-size: 1.5rem;
+    text-indent: 5px;
+    margin-bottom: 15px;
+}
+section#home ul{
+    height: 100%;
+    width: 100%;
+    display: inline-flex;
+    text-align: center;
+}
+
+section#home ul li{
+    flex-wrap: wrap;
+    width: 49%;
+    height: 90%;
+    transform: skew(-10deg);    
+    background-size: cover !important;
+    background-position: top !important;    
+    box-shadow: 5px 5px 0 #bababa;
+    border: thin solid rgba(0,0,0,0.8);
+    transition: width 0.5s linear;
+    margin: 0 auto;
+}
+
+section#home ul li a{
+    width: 100%;
+    height:100%;
+    display:block;
+    position: relative;
+}
+
+section#home ul li a span{
+    position: absolute;
+    bottom: 0;
+    color: #000;
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    background-color: #ffffff;
+    font-size: 2.5rem;
+}
+
+section#home ul li:hover{
+    width: 100%;
+}
+
+/* ----------------------- */
+
+/* Section (id: characters) */
+
+section#characters h1.header{
+    font-style: italic;
+    font-weight: 700;
+    color: #000;
+    background-color: #f5c23d;
+    text-indent: 20px;
+    font-family: 'Teko', sans-serif;
+    font-size: 3rem;
+    padding-top: 15px;
+}
+
+section#characters ul.parent{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f5c23d;
+    padding: 22px 15px;
+}
+
+section#characters ul.parent li{
+    margin: 0 auto;
+    border: 10px solid #9e7f2c;
+    margin-bottom: 15px;
+    background-color: #fff;
+    font-family: 'Teko', sans-serif;
+}
+
+section#characters ul.parent li img{
+    display:inline-block;
+    vertical-align: top;
+}
+
+section#characters ul.parent li span.name{
+    display:block;
+    position: absolute;
+    bottom: 0;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 20px 0;
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #000;
+}
+
+section#characters ul.parent li span.details{
+    display:none;
+    color: #000;
+    position: absolute;
+    width: 100%;
+    font-family: 'Teko', sans-serif;
+    text-align: center;
+    text-decoration: none;
+    bottom: 0;
+}
+
+section#characters ul.parent li a{
+    position: relative;
+    width:100%;
+    height: 100%;
+    display:block;
+}
+
+section#characters ul.parent li a:hover span.details{
+    display: block;
+}
+
+section#characters ul.parent li a div.modalDetails div:first-of-type ul li{
+    width: 15% !important;
+}
+
+section#characters div.loadmore{
+    width: 100%;
+    padding: 40px 0;
+    background-color: #f5c23d;
+    font-family: 'Teko', sans-serif;
+    display: block;
+    text-align: center;
+}
+
+section#characters div.loadmore span{
+    background-color: #d6aa36;
+    padding: 10px 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: box-shadow .6s linear;
+}
+
+section#characters div.loadmore span:hover{
+    box-shadow: 0 0 1px #000000;
+}
+
+/* ----------------------- */
+
+/* Section (id: comics) */
+
+section#comics h1.header{
+    font-style: italic;
+    font-weight: 700;
+    color: #000;
+    background-color: #f5c23d;
+    text-indent: 20px;
+    font-family: 'Teko', sans-serif;
+    font-size: 3rem;
+    padding-top: 15px;
+}
+
+section#comics ul.parent{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f5c23d;
+    padding: 22px 15px;
+}
+
+section#comics ul.parent li{
+    margin: 0 auto;
+    border: 10px solid #9e7f2c;
+    margin-bottom: 15px;
+    font-family: 'Teko', sans-serif;
+    min-height: 149px;
+    background-color: #ffffff;
+}
+
+section#comics ul.parent li img{
+    display:inline-block;
+    vertical-align: top;
+}
+
+section#comics ul.parent li span.title{
+    display:block;
+    position: absolute;
+    bottom: 0;
+    background-color: #ffffff;
+    width: 100%;
+    padding: 20px 0;    
+    text-align: center;
+    font-size: 1.1rem;
+    color: #000;
+}
+
+section#comics ul.parent li span.details{
+    display:none;
+    color: #000;
+    position: absolute;
+    width: 100%;    
+    text-align: center;
+    text-decoration: none;
+    bottom: 0;
+}
+
+section#comics ul.parent li a{
+    position: relative;
+    width:100%;
+    height: 100%;
+    display:block;
+}
+
+section#comics ul.parent li a:hover span.details{
+    display: block;
+}
+
+section#comics div.loadmore{
+    width: 100%;
+    padding: 40px 0;
+    background-color: #f5c23d;
+    font-family: 'Teko', sans-serif;
+    display: block;
+    text-align: center;
+}
+
+section#comics div.loadmore span{
+    background-color: #d6aa36;
+    padding: 10px 30px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: box-shadow .6s linear;
+}
+
+section#comics div.loadmore span:hover{
+    box-shadow: 0 0 1px #000000;
+}
+
+/* ------------------------- */
+
+/* Modal Loading (id : modalLoading) */
+
+@keyframes spinner{
+    to{transform: rotate(360deg)}
+}
+
+div#modalLoading{
+    /* display:none; */
+    opacity:0;
+    position: absolute;
+    width:100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: -1;
+    color: #f5c23d;
+    font-size:3rem;
+    transition: opacity 0.4s linear;
+}
+div#modalLoading i{    
+    animation: spinner 1s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+div#modalLoading.show{    
+    opacity: 1;
+    z-index: 10;
+}
+
+/* -------------------------------- */
+
+/* Load More spinner */
+
+div.loadmore i{
+    animation: spinner 1s linear infinite;
+    display:none;
+    font-size: 1rem;
+}
+
+div.loadmore i.loading{
+    display: inline-block;
+}
+
+/* ----------------------------------- */
+
+/* Modal Details (class : modalDetails) */
+
+@keyframes loading{
+    0% {opacity: 1}
+    50% {opacity: 0}
+    100% {opacity: 1}
+}
+
+div.modalDetails{
+    width:  70%;
+    margin: 10px 0 0 20px;
+    min-width: 680px;
+    display:none;
+}
+
+div.modalDetails div.loading span{
+    animation: loading normal 1.5s linear infinite;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+    width: 100%;
+    padding: 116px 0;
+    color: #555;
+}
+
+div.modalDetails.show{
+    display: inline-block;
+    opacity:1;
+}
+
+div.modalDetails span.close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+div.modalDetails div:first-of-type{
+
+}
+
+div.modalDetails div:first-of-type h1{
+    color: #000000;
+    font-size: 1.6rem;
+    word-break: break-all;
+}
+
+div.modalDetails div:first-of-type div.description{
+    color: #666;
+    font-size: 1.1rem;
+    margin: 5px 0 15px 0;
+}
+
+div.modalDetails div:first-of-type ul.child{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+div.modalDetails div:first-of-type ul.child li{
+    border: none !important;
+    width: 12%;
+    text-align: center;
+    margin: unset !important;
+    min-height: unset !important;
+    color: #555555;
+}
+
+div.modalDetails div:first-of-type ul.child li div.img{
+    width: 50px;
+    height: 50px;
+    display: block;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: top !important;
+    border-radius: 50px;
+    margin: 0 auto;
+}
+
+div.modalDetails div:first-of-type ul.child li span{
+    margin-top: 10px;
+    display: block;
+}
+/* --------------------------------- */
+

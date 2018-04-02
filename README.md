@@ -1,61 +1,66 @@
 # Processo Seletivo Front-End Pleno da Sigma/TJMT
 
-Bem-vindo ao processo seletivo para desenvolvedor front-end pleno do TJMT/Sigma!
+## Houmar Passareli Rodrigues de Sousa
 
-## O desafio
+## Firebase
 
-Crie uma Single Page Application de uma loja de quadrinhos utilizando a API da Marvel para todos os consumos de dados.
-Endereço: https://developer.marvel.com
+O projeto está hospedado no firebase e pode ser acessado por este link
+[a link](https://comicshop-hprs.firebaseapp.com/)
 
-## Requisitos
+## Considerações
 
-### Quadrinhos (comics)
+Bem, me esforcei o máximo para demonstrar meu conhecimento em JS como foi requisitado.
 
-* Página que tenha uma listagem de quadrinhos
-* Página que tenha a visualização dos detalhes de um quadrinho
-    * Essa página deve conter, também, uma listagem com os personagens que estão no quadrinho.
+Ainda sim ficaram algumas features que eu queria fazer, infelizmente a correria me impossibilitou.
 
-### Personagens (characters)
+Fiz o projeto todo em inglês por achar que não casaria termos em português na aplicação e dados em inglês vindos da API.
 
-* Página que tenha uma listagem de personagens
-* Página que tenha a visualização dos detalhes de um personagem
-    * Essa página deve conter, também, uma listagem com os quadrinhos nas quais o personagem faz parte.
+### JS nativo
 
-### Requisitos obrigatórios
+Sim, eu resolvi fazer em JS nativo. Não usei frameworks e não usei JQuery. Fiz tudo com na mão com JS PURO!
 
-* Deve ser uma SPA.
-* A sua aplicação deve conter um arquivo README explicando o funcionamento e a solução adotada na sua implementação do desafio.
+A única lib que eu usei foi para gerar os hashs em MD5. Nesse ponto precisaria de um conhecimento muito avançado.
 
-### Observações/Dicas
+### Por que JS nativo?
 
-* Não limite-se às funcionalidades acima. Qualquer outra feature extra (e não obrigatória) é bem-vinda. Por exemplo:
-    * Campo de pesquisa nas páginas de listagem
-    * Funcionalidade para adicionar produtos em um carrinho
-    * Paginação
-* O layout é por sua conta.
-* A arquitetura é por sua conta.
-* Qualquer framework SPA (Vue.js, React ou Angular 2+) é permitido
-* Usar javascript puro é permitido
-* Usar CSS puro é permitido
-* Usar qualquer pré-processador (LESS ou SASS) é permitido
-* Não se esqueça da otimização da velocidade da aplicação nem da experiência do usuário.
-* Alguns endereços de imagens disponibilizadas pela API estão quebrando. Existe uma forma de resolução. Faz parte do desafio resolver.
+Gosto do desafio, e o desafio era uma prova de JS Pleno.
+Não desmerecendo quem usa/usou framework, mas queria mostrar meu potencial com o código base.
 
-## Critérios de avaliação
+### JS + CSS 
 
-* Usabilidade
-* Criatividade
-* Código limpo e organizado
-* Documentação do projeto (readme)
+O fato de eu não usar JQuery me trouxe alguns desafios. Na minha tragetória com desenvolvimento em JS já fiz muito disso, mas com o uso de ferramentas que facilitam as coisas, você perde o costume.
 
-## Procedimento
+Então usei muito as funções de transição a animação do CSS.
 
-* Faça um fork do projeto https://github.com/gabrielsimplicio/processo-seletivo-pleno-sigma
-* Ao finalizar a sua aplicação, crie um pull request no projeto de origem.
-* Para ter acesso à API, você deve ter uma key. Basta cadastrar-se no site da marvel e obtê-la. É totalmente gratuita.
+### Como funciona?
 
-## Prazo
-* O prazo para criar pull requests é até o dia 02/04/2018, às 12h.
+O projeto esta portado unicamente em uma página HTML.
+É carregado todos os files JS nesse HTML e a partir deles vou inserindo o conteudo conforme demanda e requisição.
 
-### Dê o seu melhor!
-### Boa prova! ;)
+Começando pelo main.js que fica responsável por métodos genericos e complementos para index.Genericos como:
+
+* HTTP Request;
+* Gerador de Hash;
+* Responsável pela renderização da página;
+* Manipulação de Eventos;
+
+Em seguida temos a home.js que como o nome já diz está encarregada de ser a "porta de entrada" da aplicação.
+
+Nele você escolhe qual direção seguir entre comics ou characters.
+
+Comics irá requisitar a comics.js, nela assim como na characters.js são feitas as manipulações de exibição de suas respectivas obrigações. Como:
+
+* Requisições direcionadas a API;
+* Tratamento dos dados recebidos;
+* Acionamento de efeitos para usuabiliade;
+* Construção da página de exibição.
+
+### Desafios encontrados
+
+Os maiores desafios foi em questão da API mesmo. Foi comentado que existiam links quebrados das imagens onde na verdade não existem imagens e são substituidas por thumbnails defaults.
+
+### Considerações finais
+
+Bom, minha aplicação não ficou muito robusta, mas acredito que o código está bem completo e legível.
+
+Aguardo o retorno.
