@@ -34,7 +34,7 @@ Site Single Page Application que busca e lista através da API da Marvel, todos 
 ## Solução adotada
 
 * **Framework** 
-    * O framework escolhido foi o Angular, juntamente com o Angular CLI seguindo os padrões do Style Guide do Angular, como forma de ganhar mais experiência com desafios do mesmo.
+    * O framework escolhido foi o Angular, juntamente com o Angular CLI seguindo os padrões do Style Guide do Angular, como forma de ganhar mais experiência com desafios.
 * **Pré-processadores**
     * Foi utilizado o pré-processador SASS ao invés de apenas CSS puro, para facilitar no desenvolvimento e organização dos arquivos css.
 * **Bootstrap**
@@ -45,28 +45,25 @@ Site Single Page Application que busca e lista através da API da Marvel, todos 
     * Instale o [Node.js e o npm]
     * Instale o [Git]
 
-**Clone o projeto, instale as dependências e devDependencies e inicie o servidor**
+**Instale o Angular CLI globalmente.**
 ```sh
-git clone https://github.com/Cristianotx/processo-seletivo-pleno-sigma
-cd processo-seletivo-pleno-sigma
-npm install
-npm start
+npm install -g @angular/cli
  ```
  
- ## Dependências
- **O site atualmente está usando as seguintes dependências**
- | Dependência | Versão |
-| ------ | ------ |
-| [Bootstrap] | 4.0.0 |
-| [jQuery] | 3.3.1 |
-
+ **Faça um clone do projeto e acesse o mesmo.**
+ ```sh
+git clone https://github.com/Cristianotx/processo-seletivo-pleno-sigma
+cd processo-seletivo-pleno-sigma-master
+ ```
+ **Instale as dependências e inicie o servidor**
+  ```sh
+npm install
+ng serve
+ ```
 License
 ----
 
 MIT
-
-[//]: # (Estes são links de referência usados no corpo desta nota e são retirados quando o processador de marcação faz o seu trabalho. Não há necessidade de formatar bem porque não deve ser visto. Obrigado SO - http://stackoverflow.com/ perguntas / 4823468 / store-comments-in-markdown-syntax)
-
 
    [Git]: <https://git-scm.com/downloads>
    [Bootstrap]: <http://getbootstrap.com/>
