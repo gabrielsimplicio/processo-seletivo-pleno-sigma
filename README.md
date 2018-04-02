@@ -48,7 +48,7 @@ Site Single Page Application que busca e lista através da API da Marvel, todos 
 **Clone o projeto, instale as dependências e devDependencies e inicie o servidor**
 ```sh
 git clone https://github.com/Cristianotx/processo-seletivo-pleno-sigma
-cd processo-seletivo-pleno-sigma-master
+cd processo-seletivo-pleno-sigma
 npm install
 npm start
  ```
