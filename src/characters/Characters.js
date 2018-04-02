@@ -1,44 +1,49 @@
 import React, {Component} from 'react';
 
+import MarvelFetching from '../general/MarvelFetching';
+import Loading from "../general/Loading";
 import { getCharacter } from './mappings';
 
-// import MarvelFetching from '../general/MarvelFetching';
+import CharactersLink from "./CharactersLink";
+
+import './Characters.scss';
 
 class Characters extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {characters: [], status: '', data: [] }
+    this.state = { characters: [], status: '', data: [] }
   }
 
   componentWillReceiveProps(nextProps) {
 
     if (!nextProps.loading) {
       this.setState({
-        characters: nextProps.data.data.results.map(getCharacter),
-        status: nextProps.data.status,
-        data: {
-          count: nextProps.data.data.count,
-          limit: nextProps.data.data.limit,
-          offset: nextProps.data.data.offset,
-          total: nextProps.data.data.total,
-        }
+        characters: nextProps.data.map(getCharacter),
       });
     }
   }
 
   render() {
+
+    if (this.props.loading) {
+      return (
+        <Loading isLoading={this.props.loading} />
+      );
+    }
+
     return (
-      <article>
+
+      <article className="Characters">
         <header>
           <h1>Personagens</h1>
         </header>
-        <div>
-          {this.state.characters.map(x => (<p>{x.name}</p>) )}
+        <div className="items">
+          {this.state.characters.map(props => (<CharactersLink key={props.id} {...props}/>) )}
         </div>
-        <p>{this.props.loading ? 'carregando...' : ''}</p>
       </article>
     );
+
   }
 }
 
@@ -47,11 +52,10 @@ Characters.defaultProps = {
   loading: false
 }
 
-// const FetchingCharacters = () => (
-//   <Fetching url={marvelUrl('characters')}>
-//     <Characters/>
-//   </Fetching>
-// );
+const FetchingCharacters = () => (
+  <MarvelFetching endpoint="characters" pagination>
+    <Characters/>
+  </MarvelFetching>
+);
 
-
-export default Characters;
+export default FetchingCharacters;

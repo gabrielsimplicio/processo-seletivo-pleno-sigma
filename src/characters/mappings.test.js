@@ -3,13 +3,14 @@ import {
   getCharacter
 } from './mappings';
 
-describe('getThumbnailpath', () => {
+describe('getThumbnailPath', () => {
+
   test('Expect to be an empty string', () => expect(getThumbnailPath()).toBe(''));
 
   test('Expect to be text.com/thumb', () =>
-    expect(getThumbnailPath({ path: 'text.com/thumb' })).toBe('text.com/thumb'));
-});
+    expect(getThumbnailPath({ path: 'text.com/thumb', extension: 'png' })).toBe('text.com/thumb.png'));
 
+});
 describe('getCharacter', () => {
 
   const objectTest = {
