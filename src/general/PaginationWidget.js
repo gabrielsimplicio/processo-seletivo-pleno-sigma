@@ -5,7 +5,7 @@ import './PaginationWidget.scss';
 
 export const getPages = (total, perPage) => {
   perPage = !!perPage ? perPage : 1;
-  const numberPages = total/perPage;
+  const numberPages = Math.floor(total/perPage);
   const pages = [];
   for (let i = 0; i < numberPages; i++) {
     pages.push(i + 1);

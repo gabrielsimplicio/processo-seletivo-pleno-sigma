@@ -5,11 +5,19 @@ import {
 
 describe('getPages', () => {
 
+  const expect74 = []
+  for (let i = 0; i < 74; i++) {
+    expect74.push(i + 1);
+  }
+
   test('Expect to equal an array of int with 1..5', () =>
     expect(getPages(50, 10)).toEqual([1,2,3,4,5]));
 
   test('Expect to equal an array of int with 1..10', () =>
     expect(getPages(100, 10)).toEqual([1,2,3,4,5,6,7,8,9,10]));
+
+  test('Expect to equal an array of int with 1..74', () =>
+    expect(getPages(1491, 20)).toEqual(expect74));
 
 });
 
