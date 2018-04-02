@@ -1,15 +1,33 @@
 .App-header {
-  padding: 10px 10px 5px 10px;
+  display: flex;
   color: #ffffff;
   background-color: #202020;
+  font-family: 'TradeGhoticBold', Arial, Helvetica, sans-serif;
+
+  > div {
+    flex: 1;
+  }
+
+  > a {
+    height: 130px;
+  }
+
+  hgroup {
+    padding-left: 10px;
+  }
+
+  .App-logo {
+    height: 130px;
+  }
+
 }
 
 .App-navbar {
 
   ul {
     list-style: none;
-    padding-left: 0;
-
+    padding-left: 10px;
+    margin-bottom: 0;
   }
 
   li {
@@ -17,7 +35,7 @@
 
     a {
       display: inline-block;
-      padding: 5px;
+      padding: 5px 10px;
       color: #ffffff;
       text-decoration: none;
       line-height: 25px;
@@ -25,6 +43,10 @@
       &:hover {
         color: #f0f0f0;
         background-color: #404040;
+      }
+
+      &.selected {
+        border-bottom: 3px solid red;
       }
     }
   }

@@ -2,7 +2,8 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: sans-serif;
+  font-family: 'TradeGhotic', Arial, Helvetica, sans-serif;
+  font-weight: 700;
 }
 
 body {
@@ -17,4 +18,14 @@ h4,
 h5,
 h6 {
   margin: 0;
+}
+
+@font-face {
+  font-family: 'TradeGhoticBold';
+  src: url('/fonts/TradeGothicLTBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'TradeGhotic';
+  src: url('/fonts/TradeGothicLT.ttf') format('truetype');
 }
