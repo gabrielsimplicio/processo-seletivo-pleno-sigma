@@ -1,5 +1,8 @@
-import { Paginacao } from './shared/paginacao.model';
 import { Component, Output, EventEmitter, Input } from '@angular/core';
+
+import { PaginacaoService } from './shared/paginacao.service';
+
+import { Paginacao } from './shared/paginacao.model';
 
 @Component({
   selector: 'app-paginacao',
@@ -11,6 +14,10 @@ export class PaginacaoComponent {
   @Input() paginacao: Paginacao;
   @Input() totalRegistros: number;
   @Input() totalDePaginas: number;
+
+  paginaAtual: number;
+
+  constructor(private paginacaoService: PaginacaoService) {}
 
   primeira() {
     this.alterarPaginacao.emit('primeira');
@@ -26,5 +33,14 @@ export class PaginacaoComponent {
 
   ultima() {
     this.alterarPaginacao.emit('ultima');
+  }
+
+  mostraPaginaAtual(): number {
+    if ( +this.paginacaoService.paginacao.offset === 0) {
+      this.paginaAtual = 1;
+    } else {
+      this.paginaAtual = Math.floor((this.paginacaoService.paginacao.offset / this.paginacaoService.paginacao.limit) + 1);
+    }
+    return this.paginaAtual;
   }
 }

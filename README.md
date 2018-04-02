@@ -1,23 +1,25 @@
 # Site de quadrinhos da Marvel
 
-Site Single Page Application que busca e lista atravéns da API da Marvel, todos seus quadrinhos e personagens.
+Site Single Page Application que busca e lista através da API da Marvel, todos seus quadrinhos e personagens.
 
 ## Funcionamento
 
 ### Páginas
 
-* O site dividido em 5 páginas.
+* O site está dividido em 5 páginas.
 
 * /home
     * Lista os 12 quadrinhos mais recentes e os 12 personagens mais recentes.
 * /quadrinhos
-    * Lista todos os quadrinhos dísponíveis pela Marvel, listando 12 por página.
+    * Lista todos os quadrinhos dísponíveis pela Marvel.
+    * Sistema de paginação, mostrando 12 quadrinhos por página.
     * Campo de busca, para pesquisar um quadrinho pelo nome.
 * /quadrinho/id
     * Lista os detalhes do quadrinho selecionado.
     * Caso tenha, lista os personagem que são relacionados à esse quadrinho.
 * /personagens
     * Lista todos os personagens dísponíveis pela Marvel, listando 12 por página.
+    * Sistema de paginação, mostrando 12 personagens por página.
     * Campo de busca, para pesquisar um personagem pelo nome.
 * /personagem/id
     * Lista os detalhes do personagem selecionado.
@@ -32,10 +34,9 @@ Site Single Page Application que busca e lista atravéns da API da Marvel, todos
 ### Solução adotada
 
 * Framework 
-    * O framework escolhido foi o Angular.
+    * O framework escolhido foi o Angular, juntamente com o Angular CLI seguindo os padrões do Style Guide do Angular.
 * Pré-processadores 
     * Foi utilizado o pré-processador SASS ao invés de apenas CSS puro, para facilitar no desenvolvimento e organização dos arquivos css.
-    * Foi utilizado a biblioteca Bootstrap para responsivo.
 * Bootstrap
-    * Foi utilizado bootstrap para o responsivo. 
+    * Foi utilizado bootstrap 4.0 para o responsivo. 
 

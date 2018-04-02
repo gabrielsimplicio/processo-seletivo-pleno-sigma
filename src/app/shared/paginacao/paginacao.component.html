@@ -1,7 +1,7 @@
 <div class="paginacao">
   <div class="pag-titulo row">
     <div class="col-sm-12 nopadding">
-      <h5>{{paginacao.offset == 0? 1 : (paginacao.offset/12) + 1 }} de {{ totalDePaginas }} páginas</h5>
+      <h5>{{ mostraPaginaAtual(paginacao.offset) }} de {{ totalDePaginas }} páginas</h5>
     </div>
   </div>
   <div class="row">
