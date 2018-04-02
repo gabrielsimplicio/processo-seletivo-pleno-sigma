@@ -13,3 +13,6 @@ export const getDetailUrl = urls =>
 
 export const getThumbnailPath = thumbnail =>
   thumbnail && thumbnail.path ? `${thumbnail.path}.${thumbnail.extension}` : '';
+
+export const getCreatorName = creator =>
+  creator && creator.name ? `${creator.name} | ${creator.role}` : '';

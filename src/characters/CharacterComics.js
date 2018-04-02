@@ -12,8 +12,6 @@ const CharacterComics = ({ data, loading }) => {
     );
   }
 
-  console.log(data);
-
   return (
     <section className="CharacterComics">
       <header>

@@ -9,7 +9,7 @@ const CharacterLink = ({name, id, thumbnail}) => (
     <div className="CharacterLink">
       <div className="img-wrapper">
         <img  src={imageFilterRegex.test(thumbnail) ? '/img/not_found.jpg' : thumbnail}
-              alt={`${name} thumbnail`} />
+              alt={`Imagem do personagem ${name}`} />
 
       </div>
 

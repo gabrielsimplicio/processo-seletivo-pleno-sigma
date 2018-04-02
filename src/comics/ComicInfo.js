@@ -1,9 +1,68 @@
 import React from 'react';
 
-const ComicInfo = ({match }) => {
+import MarvelFetching from '../general/MarvelFetching';
+import Loading from "../general/Loading";
+import { formatToString } from "../general/formatCurrency";
+
+import ComicCharacters from './ComicCharacters';
+
+import {
+  getThumbnailPath,
+  getFirstPrice,
+  getCreatorName
+} from "./mappings";
+
+const ComicInfo = ({ data, loading }) => {
+
+  if (loading) {
+    return (
+      <Loading isLoading={loading} />
+    );
+  }
+
+  if (!data[0]) {
+    return '';
+  }
+
+  const dataObject = data[0];
+
+  const price = getFirstPrice(dataObject.prices);
+
   return(
-    <div>{ match.params.id }</div>
+    <article className="ComicInfo">
+      <div>
+        <img
+          className="img-comic"
+          src={getThumbnailPath(dataObject.images[0])}
+          alt={`Imagem do quadrinho ${dataObject.title}`}/>
+        <header>
+          <h1>{dataObject.title}</h1>
+        </header>
+        <p>{dataObject.description}</p>
+
+        { dataObject.pageCount ? (<p>Páginas: {dataObject.pageCount}</p>) : '' }
+
+        { price ? (<p>Preço: {formatToString(price)}</p>) : '' }
+
+        <ul>
+          {dataObject.creators.items
+            .map(getCreatorName)
+            .map((name, i) => (<li key={i}>{name}</li>))}
+        </ul>
+
+      </div>
+
+      <ComicCharacters comicId={dataObject.id}/>
+
+    </article>
   );
+
 }
 
-export default ComicInfo;
+const FetchingComicInfo = ({match}) => (
+  <MarvelFetching endpoint={`comics/${match.params.id}`}>
+    <ComicInfo/>
+  </MarvelFetching>
+);
+
+export default FetchingComicInfo;

@@ -2,7 +2,8 @@ import {
   getFirstPrice,
   getDetailUrl,
   getThumbnailPath,
-  getComic
+  getComic,
+  getCreatorName
 } from './mappings';
 
 describe('getFirstPrice', () => {
@@ -36,6 +37,15 @@ describe('getThumbnailPath', () => {
 
   test('Expect to be text.com/thumb', () =>
     expect(getThumbnailPath({ path: 'text.com/thumb', extension: 'png' })).toBe('text.com/thumb.png'));
+
+});
+
+describe('getCreatorName', () => {
+
+  test('Expect to be an empty string', () => expect(getCreatorName()).toBe(''));
+
+  test('Expect to be George Lucas | director', () =>
+    expect(getCreatorName({ name: 'George Lucas', role: 'director' })).toBe('George Lucas | director'));
 
 });
 

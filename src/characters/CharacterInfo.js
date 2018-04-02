@@ -23,7 +23,10 @@ const CharacterInfo = ({ data, loading }) => {
   return(
     <article className="CharacterInfo">
       <div>
-        <img className="img-character" src={getThumbnailPath(dataObject.thumbnail)}/>
+        <img
+          className="img-character"
+          src={getThumbnailPath(dataObject.thumbnail)}
+          alt={`Imagem do personagem ${dataObject.name}`}/>
         <header>
           <h1>{dataObject.name}</h1>
         </header>

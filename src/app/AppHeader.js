@@ -5,7 +5,7 @@ import { NavLink, Link } from "react-router-dom";
 const AppHeader = () => (
   <header className="App-header">
     <Link to="/home">
-      <img className="App-logo" src="/img/marvel-logo.png" />
+      <img className="App-logo" src="/img/marvel-logo.png" alt="Logo da Marvel" />
     </Link>
     <div>
       <hgroup>
