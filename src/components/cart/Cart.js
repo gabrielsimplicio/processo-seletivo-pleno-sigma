@@ -63,7 +63,6 @@ class Cart extends Component {
 
         if (this.props.isLoadSuccess) {
             return (
-                <div className={'row'}>
                     <div className="col s12" style={styles.backgroundCard}>
                         <div className="center-align">
                             <h3><b style={styles.titlePage}>CART</b></h3>
@@ -93,7 +92,6 @@ class Cart extends Component {
                     )}
                         </div>
                     </div>
-                </div>
             );
         }
 

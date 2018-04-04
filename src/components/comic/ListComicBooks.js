@@ -161,7 +161,6 @@ class ListComicBooks extends Component {
                         </div>
                     </form>
                     <br />
-
                     <div className="row center-align">
                         {data.map((n, i) =>
                             <ItemComicBook key={i} numbCharacters={n.characters.available} idComic={n.id} urlImage={n.thumbnail.path + "/portrait_fantastic." + n.thumbnail.extension} title={n.title} actionAddCart={() => { this.addToChart(n.id) }} price={n.prices[0].price} />
