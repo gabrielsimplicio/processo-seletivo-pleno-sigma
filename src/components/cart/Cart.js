@@ -1,12 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import toastr from 'toastr';
 
 import Loading from './../Loading';
 
-import {loadChart} from '../../store/cart/action';
-import {connect} from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { Link } from 'react-router-dom';
+
+import { loadChart } from '../../store/cart/action';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import cookie from "react-cookies";
 
@@ -16,10 +18,27 @@ var confToastr = {
     "timeOut": "5000"
 }
 
+const styles = {
+    backgroundCard: {
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        padding: '20px',
+        borderRadius: '15px'
+    },
+    titlePage: {
+        fontFamily: 'fantasy',
+        color: 'white',
+        fontWeight: 'bold'
+    },
+    describe: {
+        color: 'white',
+        fontWeight: 'bold'
+    }
+}
+
 
 class Cart extends Component {
-    state ={
-        totalPrice : 0
+    state = {
+        totalPrice: 0
     }
     componentWillMount() {
         this.props.loadChart();
@@ -33,43 +52,52 @@ class Cart extends Component {
             var date = new Date();
             date.setDate(date.getDate() + 7)
             arrayIncookie.splice(index, 1);
-            cookie.save('chartItems', arrayIncookie, {expires: date})
-            toastr.success('This comic has been removed from your cart','',confToastr);
+            cookie.save('chartItems', arrayIncookie, { expires: date })
+            toastr.success('This comic has been removed from your cart', '', confToastr);
         }
 
         this.props.loadChart();
     }
-
-
 
     render() {
 
         if (this.props.isLoadSuccess) {
             return (
                 <div className={'row'}>
-                    <div className="col s12">
-                        <h5>Itens: {this.props.comics.length}</h5>
-                        <h5>Total Price: ${this.props.totalPrice.toFixed(2)}</h5>
-                    </div>
-                    {this.props.comics.map((n, i) =>
-                        <div key={i} className="col s12 m3">
-                            <figure className="imgThumb"><img src={n.thumbnail.path + "/portrait_fantastic." + n.thumbnail.extension} alt={n.title}/>
+                    <div className="col s12" style={styles.backgroundCard}>
+                        <div className="center-align">
+                            <h3><b style={styles.titlePage}>CART</b></h3>
+                            <hr />
+                        </div>
+                        <br></br>
+                        <br></br>
+                        <h5 style={styles.describe}>Itens: {this.props.comics.length}</h5>
+                        <h5 style={styles.describe}>Total Price: ${this.props.totalPrice.toFixed(2)}</h5>
+                        <br />
+                        <div className="row center-align">
+                        {this.props.comics.map((n, i) =>
+                        <div className="col s12 m6 l4 xl3" style={{ padding: '30px' }}>
+                            <figure className="imgThumb">
+                                <img className='responsive-img' src={n.thumbnail.path + "/portrait_fantastic." + n.thumbnail.extension} alt={n.title} />
                                 <figcaption>
-                                    <h6>{n.title}</h6>
-                                    <br></br>
-                                    <p>Price: ${n.prices[0].price}</p>
+                                    <h6><b>{n.title}</b></h6>
+                                    <p><b>Characters: {n.characters.available}</b></p>
+                                    <p><b>Price: ${n.prices[0].price}</b></p>
                                     <div className="icons">
-                                        <a title="Remove Comic from Cart" href='#!' onClick={()=>{this.removeItemOfChart(n.id)}}><i className="material-icons">remove_shopping_cart</i></a>
+                                        <Link title="View Comic Detail" to={'/comics/' + n.id}><i className="material-icons">remove_red_eye</i></Link>
+                                        <a title="Remove Comic from Cart" href='#!' onClick={() => { this.removeItemOfChart(n.id) }}><i className="material-icons">remove_shopping_cart</i></a>
                                     </div>
                                 </figcaption>
                             </figure>
                         </div>
                     )}
+                        </div>
+                    </div>
                 </div>
             );
         }
 
-        return (<Loading/>);
+        return (<Loading />);
     }
 
 }
@@ -80,6 +108,6 @@ const mapStateToProps = store => ({
     totalPrice: store.chartReducer.listComic.totalPrice
 });
 
-const mapDispatchToProps = dispatch => bindActionCreators({loadChart}, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({ loadChart }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

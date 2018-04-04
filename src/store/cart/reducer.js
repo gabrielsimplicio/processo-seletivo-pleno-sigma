@@ -32,7 +32,7 @@ export const chartReducer = (state = initialState, action) => {
                     comics: action.comics,
                     totalPrice: action.totalPrice,
                     isLoadSuccess: true,
-                    needLoad: false
+                    isRequesting: false
                 }
 
             }
