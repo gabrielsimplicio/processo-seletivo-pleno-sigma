@@ -30,30 +30,24 @@ const ComicInfo = ({ data, loading }) => {
 
   return(
     <article className="ComicInfo">
+
+      <div className="info-comic">
+        <header>
+          <h1>{dataObject.title}</h1>
+        </header>
+        <p className="description">{dataObject.description}</p>
+
+        { price ? (<p className="description">Preço: {formatToString(price)}</p>) : '' }
+
+        <ComicCharacters comicId={dataObject.id}/>
+      </div>
+
       <div>
         <img
           className="img-comic"
           src={getImagePath(dataObject.images)}
           alt={`Imagem do quadrinho ${dataObject.title}`}/>
-        <header>
-          <h1>{dataObject.title}</h1>
-        </header>
-        <p>{dataObject.description}</p>
-
-        { dataObject.pageCount ? (<p>Páginas: {dataObject.pageCount}</p>) : '' }
-
-        { price ? (<p>Preço: {formatToString(price)}</p>) : '' }
-
-        <ul>
-          {dataObject.creators.items
-            .map(getCreatorName)
-            .map((name, i) => (<li key={i}>{name}</li>))}
-        </ul>
-
       </div>
-
-      <ComicCharacters comicId={dataObject.id}/>
-
     </article>
   );
 

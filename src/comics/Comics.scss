@@ -1,13 +1,14 @@
 .Comics {
 
-  padding: 30px 10px;
+  padding: 60px;
+  background-color: #202020;
+  color: white;
 
   h1 {
     margin-left: 15px;
     margin-bottom: 30px;
     font-size: 2.3em;
 
-    color: #202020;
   }
 
   a {
@@ -33,7 +34,7 @@
   border: 3px solid #f0141e;
 
   &:hover {
-    border-color: #202020;
+    border-color: black;
   }
 
   img {
@@ -61,44 +62,63 @@
     text-decoration: none;
   }
 
-
-}
-
-.ComicLink-separator {
-  display: block;
-  margin: 0 50px;
-  border-bottom: 1px solid gray;
-
 }
 
 .ComicInfo {
-  padding: 20px 30px;
+  display: flex;
+  height: 100%;
+
+  margin: 0;
+  padding: 60px;
+  background-color: #202020;
+  color: white;
 
   h1 {
-    margin: 0 0px 15px 0px;
+    margin-bottom: 30px;
+    font-size: 2.3em;
+
+  }
+
+  .description {
+    margin-left: 15px;
   }
 
   .img-comic {
-    width: 200px;
+    max-width: 356px;
     margin-left: 10px;
-    float: right;
+    border: 3px solid #f0141e;
   }
 
-  .ComicCharacters {
-    padding: 20px 0;
+}
 
-    clear: both;
+.ComicCharacters {
+  padding: 20px 0;
 
-    ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
 
-    li {
-      padding: 15px 10px;
-      border-bottom: 1px solid #d0d0d0;
+  .character {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+
+    border-radius: 50%;
+    border: 3px solid #f01413;
+
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      left: -10px;
+      width: 70px;
     }
 
   }
+
 }
