@@ -7,7 +7,7 @@ import { formatToString } from "../general/formatCurrency";
 import ComicCharacters from './ComicCharacters';
 
 import {
-  getThumbnailPath,
+  getImagePath,
   getFirstPrice,
   getCreatorName
 } from "./mappings";
@@ -33,7 +33,7 @@ const ComicInfo = ({ data, loading }) => {
       <div>
         <img
           className="img-comic"
-          src={getThumbnailPath(dataObject.images[0])}
+          src={getImagePath(dataObject.images)}
           alt={`Imagem do quadrinho ${dataObject.title}`}/>
         <header>
           <h1>{dataObject.title}</h1>

@@ -3,7 +3,9 @@ import {
   getDetailUrl,
   getThumbnailPath,
   getComic,
-  getCreatorName
+  getCreatorName,
+  isImageAvailable,
+  getImagePath
 } from './mappings';
 
 describe('getFirstPrice', () => {
@@ -33,10 +35,45 @@ describe('getDetailUrl', () => {
 
 describe('getThumbnailPath', () => {
 
-  test('Expect to be an empty string', () => expect(getThumbnailPath()).toBe(''));
+  test('Expect to be an empty string', () => expect(getThumbnailPath({})).toBe('/img/not_found.jpg'));
 
   test('Expect to be text.com/thumb', () =>
-    expect(getThumbnailPath({ path: 'text.com/thumb', extension: 'png' })).toBe('text.com/thumb.png'));
+    expect(getThumbnailPath({thumbnail: { path: 'text.com/thumb', extension: 'png' }})).toBe('text.com/thumb.png'));
+
+  test('Expect to substitute thumbnail by image', () => {
+
+    const input = {
+      thumbnail : { path: 'thumb.com/image_not_available', extension: 'png' },
+      images: [
+        { path: 'thumb.com/image', extension: 'png' }
+      ]
+    }
+
+    expect(getThumbnailPath(input)).toBe('thumb.com/image.png');
+
+  });
+
+  test('Expect to substitute thumbnail by image default', () => {
+
+    const input = {
+      thumbnail : { path: 'thumb.com/image_not_available', extension: 'png' },
+      images: [
+        { path: 'thumb.com/image_not_available', extension: 'png' }
+      ]
+    }
+
+    expect(getThumbnailPath(input)).toBe('/img/not_found.jpg');
+
+  });
+});
+
+describe('isImageAvailable', () => {
+
+  test('Expect to be false', () =>
+    expect(isImageAvailable('thumb.com/image_not_available.jpg')).toBeFalsy());
+
+  test('Expect to be true', () =>
+    expect(isImageAvailable('thumb.com/image.jpg')).toBeTruthy());
 
 });
 
@@ -134,10 +171,22 @@ describe('getComic', () => {
     id: objectTest.id,
     title: objectTest.title,
     price: 0,
-    thumbnail: objectTest.thumbnail.path + '.' +objectTest.thumbnail.extension
+    thumbnail: '/img/not_found.jpg'
   };
 
   test('Expect to have right properties', () => expect(getComic(objectTest)).toEqual(expected));
 
 });
 
+describe('getImagePath', () => {
+
+  test('expect to return default image path when undefined value', () =>
+    expect(getImagePath()).toBe('/img/not_found.jpg'));
+
+  test('expect to return default image path when invalid image', () =>
+    expect(getImagePath([{ path: 'image_not_available', extension: 'jpg' }])).toBe('/img/not_found.jpg'));
+
+  test('expect to return right path', () =>
+    expect(getImagePath([{ path: 'image', extension: 'jpg' }])).toBe('image.jpg'));
+
+});
