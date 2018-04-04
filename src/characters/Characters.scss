@@ -1,6 +1,5 @@
 .Characters {
 
-  border-radius: 6px;
   padding: 30px 10px;
 
   h1 {
@@ -32,7 +31,7 @@
   border: 3px solid #f0141e;
 
   &:hover {
-
+    border-color: #202020;
   }
 
   .img-wrapper {

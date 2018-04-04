@@ -10,11 +10,7 @@ const ComicLink = ({title, id, thumbnail, price}) => (
             alt={`Capa do quadrinho ${title}`} />
       <div className="description">
         <span className="title">{title}</span>
-        {
-          !price ?
-            <span className="not-found">Não disponível</span> :
-            <span className="price">{formatToString(price)}</span>
-        }
+        <span className="price">{formatToString(price)} </span>
       </div>
 
     </div>
