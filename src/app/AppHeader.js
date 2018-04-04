@@ -10,7 +10,6 @@ const AppHeader = () => (
     <div>
       <hgroup>
         <h1 className="App-title">Marvel HQ Store</h1>
-        <h2 className="App-subtitle">Sua melhor opção em Quadrinhos</h2>
       </hgroup>
 
       <nav className="App-navbar">

@@ -7,11 +7,9 @@ const imageFilterRegex = /image_not_available/;
 const CharacterLink = ({name, id, thumbnail}) => (
   <Link to={`/character/${id}`}>
     <div className="CharacterLink">
-      <div className="img-wrapper">
         <img  src={imageFilterRegex.test(thumbnail) ? '/img/not_found.jpg' : thumbnail}
               alt={`Imagem do personagem ${name}`} />
 
-      </div>
 
         <span className="name">{name}</span>
 

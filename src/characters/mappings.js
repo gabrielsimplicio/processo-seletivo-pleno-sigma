@@ -6,6 +6,6 @@ export const getCharacter = item => ({
 });
 
 export const getThumbnailPath = thumbnail =>
-  thumbnail && thumbnail.path ? `${thumbnail.path}.${thumbnail.extension}` : '';
+  thumbnail && thumbnail.path ? `${thumbnail.path}/portrait_incredible.${thumbnail.extension}` : '';
 
 

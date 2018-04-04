@@ -2,13 +2,14 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: 'TradeGhotic', Arial, Helvetica, sans-serif;
-  font-weight: 700;
+  box-sizing: border-box;
 }
 
 body {
   position: relative;
   top: 0;
+  font-family: 'BentonSansExtraLight', Arial, Helvetica, sans-serif;
+  font-weight: 700;
 }
 
 h1,
@@ -21,11 +22,6 @@ h6 {
 }
 
 @font-face {
-  font-family: 'TradeGhoticBold';
-  src: url('/fonts/TradeGothicLTBold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'TradeGhotic';
-  src: url('/fonts/TradeGothicLT.ttf') format('truetype');
+  font-family: 'BentonSansExtraLight';
+  src: url('/fonts/BentonSans_ExtraLight.otf') format('opentype');
 }
