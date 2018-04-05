@@ -1,0 +1,189 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+}
+
+.App-title {
+    font-size: 1.5em;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+/*
+.card-image :hover{
+  transition-duration: 1s;
+  opacity: 0.2
+}
+*/
+
+.divBody {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.backgroundContainer {
+    background-color:'rgba(0, 0, 0, 0.8)' !important;
+     padding:'20px' !important;
+    border-radius:'15px' !important;
+}
+
+.imgThumb {
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 10px 1%;
+  border-radius: 20px;
+  width: 100%;
+  color: #000000;
+  text-align: center;
+  background-color: #ffffff;
+}
+.imgThumb * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+.imgThumb img {
+  width: 100%;
+  vertical-align: top;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+.imgThumb figcaption {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 1;
+}
+.imgThumb h6,
+.imgThumb p {
+  margin: 0;
+  width: 100%;
+  left: 0;
+  opacity: 0;
+}
+.imgThumb h6 {
+  
+  display: inline-block;
+  font-weight: 400;
+  text-transform: uppercase;
+  bottom: 50%;
+  -webkit-transform: translateX(-100px);
+  transform: translateX(-100px);
+}
+.imgThumb h6 span {
+  font-weight: 400;
+}
+.imgThumb p {
+  top: 50%;
+  padding: 0 50px;
+  font-size: 1em;
+  font-weight: 500;
+  -webkit-transform: translateX(-50px);
+  transform: translateX(-50px);
+}
+.imgThumb .icons {
+  -webkit-transform: translateX(50px);
+  transform: translateX(50px);
+  opacity: 0;
+}
+.imgThumb i {
+  padding: 2px 5px;
+  display: inline-block;
+  font-size: 28px;
+  color: #000000;
+  text-align: center;
+  opacity: 0.5;
+}
+.imgThumb i:hover {
+  opacity: 1;
+}
+.imgThumb a {
+  text-decoration: none;
+}
+.imgThumb:hover img,
+.imgThumb.hover img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  opacity: 0.2;
+  transform:scale(1.1);
+}
+.imgThumb:hover h6,
+.imgThumb.hover h6,
+.imgThumb:hover p,
+.imgThumb.hover p,
+.imgThumb:hover .icons,
+.imgThumb.hover .icons {
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+.imgThumb:hover h6,
+.imgThumb.hover h6,
+.imgThumb:hover .icons,
+.imgThumb.hover .icons {
+  opacity: 1;
+}
+.imgThumb:hover p,
+.imgThumb.hover p {
+  opacity: 0.7;
+}
+
+/*Input group Materialize*/
+
+.input-group {
+    display: table;
+}
+
+.input-group input, .suffix {
+    display: table-cell;
+}
+
+.suffix {
+    width:1%;
+}
+
+.pagination li a {
+    color:white;
+}
+
+/*Link Home*/
+
+.comicLink:hover {
+  background-image: url("https://i.imgur.com/5HJhJlD.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
