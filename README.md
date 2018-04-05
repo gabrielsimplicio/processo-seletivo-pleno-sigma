@@ -5,11 +5,17 @@ Esta aplicação foi desenvolvida com:
  Bootstrap : [4.0](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
 # Dependências
 crypto-js: "^3.1.9-1",
+
 moment: "^2.21.0",
+
 react: "^16.2.0",
+
 react-dom: "^16.2.0",
+
 react-router: "^3.2.1",
+
 react-router-dom: "^4.2.2",
+
 react-scripts: "1.1.1"
 
 Caso queira visualizar as funcionalidades:
