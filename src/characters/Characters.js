@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import MarvelFetching from '../general/MarvelFetching';
+import PaginationFetching from '../general/PaginationFetching';
 import Loading from "../general/Loading";
 import { getCharacter } from './mappings';
 
@@ -52,10 +52,17 @@ Characters.defaultProps = {
   loading: false
 }
 
+const order = [
+  { value: 'name', description: 'Nome Ordem Crescente' },
+  { value: '-name', description: 'Nome Ordem Descrescente' },
+  { value: '-modified', description: 'Recentemente Alterados' },
+  { value: 'modified', description: 'Antigamente Alterados' }
+];
+
 const FetchingCharacters = () => (
-  <MarvelFetching endpoint="characters" pagination>
+  <PaginationFetching endpoint="characters" ordering={order}>
     <Characters/>
-  </MarvelFetching>
+  </PaginationFetching>
 );
 
 export default FetchingCharacters;

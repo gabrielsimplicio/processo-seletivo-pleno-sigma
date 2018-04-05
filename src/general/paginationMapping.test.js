@@ -1,7 +1,7 @@
 import {
   getPages,
   filterPages
- } from "./PaginationWidget";
+ } from "./paginationMapping";
 
 describe('getPages', () => {
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import MarvelFetching from '../general/MarvelFetching';
+import PaginationFetching from '../general/PaginationFetching';
 import Loading from "../general/Loading";
 import { getComic } from './mappings';
 
@@ -51,10 +51,20 @@ Comics.defaultProps = {
   loading: false
 }
 
+const order = [
+  { value: '-focDate', description: 'Mais Recentes' },
+  { value: 'focDate', description: 'Mais Antigos' },
+  { value: 'title', description: 'Ordem Alfabética' },
+  { value: 'issueNumber', description: 'Menor Numeração' },
+  { value: '-issueNumber', description: 'Maior Numeração' }
+];
+
 const FetchingComics = () => (
-  <MarvelFetching endpoint="comics" pagination>
+  <PaginationFetching
+    endpoint="comics"
+    ordering={order}>
     <Comics/>
-  </MarvelFetching>
+  </PaginationFetching>
 );
 
 export default FetchingComics;
