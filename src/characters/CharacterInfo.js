@@ -23,16 +23,19 @@ const CharacterInfo = ({ data, loading }) => {
   return(
     <article className="CharacterInfo">
       <div>
-        <img
-          className="img-character"
-          src={getThumbnailPath(dataObject.thumbnail)}
-          alt={`Imagem do personagem ${dataObject.name}`}/>
         <header>
           <h1>{dataObject.name}</h1>
         </header>
         <p className="description">{dataObject.description}</p>
+        <CharacterComics characterId={dataObject.id}/>
       </div>
-      <CharacterComics characterId={dataObject.id}/>
+
+      <div>
+        <img
+          className="img-character"
+          src={getThumbnailPath(dataObject.thumbnail)}
+          alt={`Imagem do personagem ${dataObject.name}`}/>
+      </div>
     </article>
   );
 

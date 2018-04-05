@@ -1,14 +1,9 @@
 .Characters {
 
-  padding: 60px;
-  background-color: #202020;
-  color: white;
-
   h1 {
-    margin-left: 15px;
     margin-bottom: 30px;
     font-size: 2.3em;
-
+    text-align: center;
   }
 
   a {
@@ -63,32 +58,50 @@
 
 .CharacterInfo {
 
-  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  margin: 0;
 
   h1 {
-    margin: 0 0px 15px 0px;
+    margin-bottom: 30px;
+    font-size: 2.3em;
   }
 
   .img-character {
     width: 250px;
     margin-left: 10px;
-    float: right;
+    border: 3px solid #f0141e;
   }
 
   .CharacterComics {
+
     padding: 20px 0;
 
-    clear: both;
-
-    ul {
+    .list {
+      display: flex;
+      flex-wrap: wrap;
       list-style: none;
       padding-left: 0;
       margin: 0;
     }
 
-    li {
-      padding: 15px 10px;
-      border-bottom: 1px solid #d0d0d0;
+    .comic {
+      position: relative;
+      width: 80px;
+      height: 100px;
+      margin: 10px;
+
+      border: 3px solid #f01413;
+
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        left: -10px;
+        width: 100px;
+      }
+
     }
 
   }

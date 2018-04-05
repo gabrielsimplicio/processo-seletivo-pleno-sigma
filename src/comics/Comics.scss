@@ -1,14 +1,9 @@
 .Comics {
 
-  padding: 60px;
-  background-color: #202020;
-  color: white;
-
   h1 {
-    margin-left: 15px;
     margin-bottom: 30px;
     font-size: 2.3em;
-
+    text-align: center;
   }
 
   a {
@@ -66,21 +61,14 @@
 
 .ComicInfo {
   display: flex;
+  justify-content: space-between;
   height: 100%;
-
   margin: 0;
-  padding: 60px;
-  background-color: #202020;
-  color: white;
 
   h1 {
     margin-bottom: 30px;
     font-size: 2.3em;
 
-  }
-
-  .description {
-    margin-left: 15px;
   }
 
   .img-comic {

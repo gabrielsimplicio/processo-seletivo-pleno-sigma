@@ -8,8 +8,7 @@ import ComicCharacters from './ComicCharacters';
 
 import {
   getImagePath,
-  getFirstPrice,
-  getCreatorName
+  getFirstPrice
 } from "./mappings";
 
 const ComicInfo = ({ data, loading }) => {
