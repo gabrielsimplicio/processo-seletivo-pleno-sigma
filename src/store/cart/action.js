@@ -26,7 +26,6 @@ export const loadChart = () => {
         dispatch(loadChartRequesting());
         var listComics = [];
         var totalPrice = 0;
-        console.log(idsComics);
         if (idsComics) {
             for (var index in idsComics) {
                 let list = await MarvelService.getComicById(idsComics[index]);

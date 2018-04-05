@@ -13,7 +13,7 @@ class ItemCharacter extends Component {
                         <h6><b>{this.props.name}</b></h6>
                         <p><b>Comics: {this.props.numbComics}</b></p>
                         <div className="icons">
-                            <Link title="View Character Detail" to={'/characters/' + this.props.idCharacter}><i className="large material-icons">remove_red_eye</i></Link>
+                            <Link className='btn btn-floating waves-effect waves-light red' title="View Character Detail" to={'/characters/' + this.props.idCharacter}><i className="large material-icons">info</i></Link>
                         </div>
                     </figcaption>
                 </figure>

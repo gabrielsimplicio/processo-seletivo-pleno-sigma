@@ -153,7 +153,7 @@ class ListComicBooks extends Component {
                                 <span className='suffix'>
                                     <button className="btn btn-floating waves-effect waves-light red"><i className="large material-icons">search</i></button>
                                 </span>
-                                &nbsp
+                                <div style={{width:'20px'}}></div>
                                 <span className='suffix'>
                                     <button type='button' className="btn btn-floating waves-effect waves-light red" onClick={this.reloadPage}><i className="large material-icons">autorenew</i></button>
                                 </span>

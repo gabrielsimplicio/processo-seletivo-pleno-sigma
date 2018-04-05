@@ -13,8 +13,9 @@ class ItemComicBook extends Component {
                         <p><b>Characters: {this.props.numbCharacters}</b></p>
                         <p><b>Price: ${this.props.price}</b></p>
                         <div className="icons">
-                            <Link title="View Comic Detail" to={'/comics/' + this.props.idComic}><i className="material-icons">remove_red_eye</i></Link>
-                            <a title="Add Comic to Cart" href='#!' onClick={this.props.actionAddCart}><i className="material-icons">add_shopping_cart</i></a>
+                            <Link className='btn btn-floating waves-effect waves-light red' title="View Comic Detail" to={'/comics/' + this.props.idComic}><i className="material-icons">info</i></Link>
+                            <span> </span>
+                            <a className='btn btn-floating waves-effect waves-light red' title="Add Comic to Cart" href='#!' onClick={this.props.actionAddCart}><i className="material-icons">add_shopping_cart</i></a>
                         </div>
                     </figcaption>
                 </figure>
