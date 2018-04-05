@@ -128,6 +128,13 @@ class ListComicBooks extends Component {
         }
     }
 
+    getPathImage(comic){
+       if(comic.thumbnail.path.indexOf('image_not_available') != -1 && comic.images.length > 0){
+           return  comic.images[0].path + "/portrait_fantastic." + comic.images[0].extension
+       }
+       return comic.thumbnail.path + "/portrait_fantastic." + comic.thumbnail.extension
+    }
+
     render() {
         const { comics, isLoadSuccess } = this.props;
 
@@ -163,7 +170,7 @@ class ListComicBooks extends Component {
                     <br />
                     <div className="row center-align">
                         {data.map((n, i) =>
-                            <ItemComicBook key={i} numbCharacters={n.characters.available} idComic={n.id} urlImage={n.thumbnail.path + "/portrait_fantastic." + n.thumbnail.extension} title={n.title} actionAddCart={() => { this.addToChart(n.id) }} price={n.prices[0].price} />
+                            <ItemComicBook key={i} numbCharacters={n.characters.available} idComic={n.id} urlImage={this.getPathImage(n)} title={n.title} actionAddCart={() => { this.addToChart(n.id) }} price={n.prices[0].price} />
                         )}
                     </div>
                     <div className='col s12 center-align'>

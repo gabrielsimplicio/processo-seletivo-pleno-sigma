@@ -94,6 +94,8 @@ class ListCharacter extends Component {
         }
     }
 
+    
+
 
     render() {
 
