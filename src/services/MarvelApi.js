@@ -10,16 +10,17 @@ const config = {
 class MarvelAPI {
 
     static async getCharacters(origOptions = {}) {
-        const defaultOptions = {page: 0, count: 20, name: '', nameStartsWith: '', comics: null}
+        const defaultOptions = {page: 1, count: 18, name: '', nameStartsWith: '', comics: null}
         const options = Object.assign(defaultOptions, origOptions)
 
         const URI = '/v1/public/characters'
         const timeStamp = moment().unix()
         const hash = CryptoJS.MD5(timeStamp + config.privateKey + config.publicKey).toString(CryptoJS.enc.Hex)
 
-        const currentOffset = options.page === 1 ? 0 : (options.count * (options.page - 1))
+        const currentOffset = options.page == 1 ? 0 : (options.count * (options.page - 1))
 
-        let params = `?apikey=${config.publicKey}&ts=${timeStamp}&hash=${hash}`
+
+        let params = `?apikey=${config.publicKey}&ts=${timeStamp}&hash=${hash}&limit=${options.count}&offset=${currentOffset}`
 
         if (options.name) {
             params = params.concat(`&name=${options.name}`)
@@ -40,7 +41,7 @@ class MarvelAPI {
     }
 
     static async getComics(origOptions = {}) {
-        const defaultOptions = {page: 1, count: 20, name: '', titleStartsWith: '', characters: null}
+        const defaultOptions = {page: 1, count: 18, name: '', titleStartsWith: '', characters: null}
         const options = Object.assign(defaultOptions, origOptions)
         const URI = '/v1/public/comics'
         const timeStamp = moment().unix()
@@ -60,7 +61,6 @@ class MarvelAPI {
 
         var response = await fetch(url)
         var data = await response.json();
-        console.log(data)
         return data;
     }
 
@@ -84,7 +84,6 @@ class MarvelAPI {
         }
 
         const data = await response.json();
-        console.log(data);
         return data;
     }
 
@@ -106,9 +105,7 @@ class MarvelAPI {
         if (!response.ok) {
             throw new Error(`Marvel v1/public/characters failed, HTTP status ${response.status}`);
         }
-
         const data = await response.json();
-        console.log(data);
         return data;
     }
 

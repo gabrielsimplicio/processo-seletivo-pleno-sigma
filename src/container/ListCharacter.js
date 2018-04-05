@@ -8,8 +8,10 @@ export default class ListCharacter extends Component {
     state = {
         search: '',
         isSearching: false,
-        listCharacter: []
+        listCharacter: [],
+        currentOffset: 0
     };
+
 
     componentWillMount() {
         this.loadApi()
@@ -18,7 +20,7 @@ export default class ListCharacter extends Component {
     loadApi = async () => {
         this.setState({
             listCharacter: [],
-            isSearching: true
+            isSearching: true,
         })
 
         var data = await MarvelApi.getCharacters();
@@ -45,11 +47,11 @@ export default class ListCharacter extends Component {
 
         var data = await MarvelApi.getCharacters({nameStartsWith: this.state.search});
         this.setState({
+
             listCharacter: data.data.results,
             isSearching: false
         })
     }
-
 
 
     render() {
@@ -59,11 +61,11 @@ export default class ListCharacter extends Component {
 
         return (
             <div className="container">
-                <form onSubmit={(e) => this.searchCharacter(e)} style={{ margin: '40px auto'}}>
+                <form onSubmit={(e) => this.searchCharacter(e)} style={{margin: '40px auto'}}>
                     <div className="input-group">
-                        <input className="form-control" type="search" placeholder="Find your favorite hero here ..." aria-label="Search" onChange={(e) => this.upadateValueInput(e)} value={this.state.search} required />
+                        <input className="form-control" type="search" placeholder="Find your favorite hero here ..." aria-label="Search" onChange={(e) => this.upadateValueInput(e)} value={this.state.search} required/>
                         <span className="input-group-btn">
-                        <button className="btn btn-search"  type="submit" id="submit"><i className="fa fa-search fa-fw"></i> Search</button>
+                        <button className="btn btn-search" type="submit" id="submit"><i className="fa fa-search fa-fw"></i> Search</button>
                     </span>
                     </div>
                 </form>
@@ -72,6 +74,7 @@ export default class ListCharacter extends Component {
                         <Heroes idCharacter={obj.id} imgUrl={obj.thumbnail.path + '/portrait_incredible' + '.' + obj.thumbnail.extension} key={index}  {...obj}/>
                     )}
                 </div>
+
             </div>
         );
     };

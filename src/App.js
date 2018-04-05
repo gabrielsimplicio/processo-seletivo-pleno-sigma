@@ -1,12 +1,7 @@
 import React, {Component} from 'react';
-import './App.css';
-import './Home.css';
+import './css/App.css';
+import './css/Home.css';
 import NavBar from './ui/NavBar';
-import MarvelAPI from './services/MarvelApi';
-import Footer from "./container/Footer";
-
-
-
 
 class App extends Component {
     componentWillMount() {

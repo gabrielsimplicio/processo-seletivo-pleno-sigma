@@ -1,5 +1,5 @@
 import React from 'react';
-import './../Home.css'
+import '../css/Home.css'
 
 var element = document.getElementById("animate");
 
