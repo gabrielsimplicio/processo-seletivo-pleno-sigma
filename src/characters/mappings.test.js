@@ -8,7 +8,7 @@ describe('getThumbnailPath', () => {
   test('Expect to be an empty string', () => expect(getThumbnailPath()).toBe(''));
 
   test('Expect to be text.com/thumb', () =>
-    expect(getThumbnailPath({ path: 'text.com/thumb', extension: 'png' })).toBe('text.com/thumb.png'));
+    expect(getThumbnailPath({ path: 'text.com/thumb', extension: 'png' })).toBe('text.com/thumb/portrait_incredible.png'));
 
 });
 describe('getCharacter', () => {
@@ -234,7 +234,7 @@ describe('getCharacter', () => {
   const expected = {
     id: 1011334,
     name: '3-D Man',
-    thumbnail: 'http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784'
+    thumbnail: 'http://i.annihil.us/u/prod/marvel/i/mg/c/e0/535fecbbb9784/portrait_incredible.jpg'
   };
 
   test('Expect to have right properties', () => expect(getCharacter(objectTest)).toEqual(expected));
