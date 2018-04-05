@@ -1,0 +1,41 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  top: 0;
+  font-family: 'BentonSansExtraCompMedium', Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+button,
+select,
+option {
+  font-family: 'BentonSansExtraCompMedium', Arial, Helvetica, sans-serif;
+  letter-spacing: 1px;
+}
+
+@font-face {
+  font-family: 'BentonSansExtraCompMedium';
+  src: url('/fonts/BentonSans_ExtraComp_Medium.otf') format('opentype');
+}

@@ -1,61 +1,32 @@
-# Processo Seletivo Front-End Pleno da Sigma/TJMT
+# Processo Seletivo Front-End Pleno da Sigma/TJMT - Solução
 
-Bem-vindo ao processo seletivo para desenvolvedor front-end pleno do TJMT/Sigma!
+Este projeto consome a API da marvel e simula uma loja de quadrinhos com os dados obtidos da API.
 
-## O desafio
+No projeto há quatro telas: Quadrinhos, Personagens, Quadrinho e Personagem (as duas últimas são telas com informações detalhadas que são acessadas ao clicar em um dos itens das duas primeiras telas).
 
-Crie uma Single Page Application de uma loja de quadrinhos utilizando a API da Marvel para todos os consumos de dados.
-Endereço: https://developer.marvel.com
+## Tecnologias Utilizadas
 
-## Requisitos
+O projeto foi iniciado utilizando o gerador de boilerplate [create-react-app](https://github.com/facebook/create-react-app) que gera um projeto configurado para a biblioteca [react](https://reactjs.org/).
 
-### Quadrinhos (comics)
+Além do `react` foram utilizados também:
 
-* Página que tenha uma listagem de quadrinhos
-* Página que tenha a visualização dos detalhes de um quadrinho
-    * Essa página deve conter, também, uma listagem com os personagens que estão no quadrinho.
+- [react-router](https://github.com/ReactTraining/react-router)
+- [Sass](https://sass-lang.com/)
+- [Jest](https://facebook.github.io/jest/)
 
-### Personagens (characters)
+E vários outros pacotes com polyfills, webpack loader e babel loader, que vieram configurados no `create-react-app`.
 
-* Página que tenha uma listagem de personagens
-* Página que tenha a visualização dos detalhes de um personagem
-    * Essa página deve conter, também, uma listagem com os quadrinhos nas quais o personagem faz parte.
+Foi cogitada a utilização do [redux](https://redux.js.org/) também, no entanto entendi que nesse ponto do projeto só iria adicionar complexidade, se houvesse tempo hábil para o desenvolvimento de funções como carrinho de compras, seria utilizado o redux.
 
-### Requisitos obrigatórios
+## Instação
 
-* Deve ser uma SPA.
-* A sua aplicação deve conter um arquivo README explicando o funcionamento e a solução adotada na sua implementação do desafio.
+Para instalar é necessário clonar o projeto e instalar os pacotes utilizando o `npm install`, após isso executar com `npm start`.
 
-### Observações/Dicas
+```
+> git clone https://github.com/brunoravanhani/processo-seletivo-pleno-sigma.git
+> cd processo-seletivo-pleno-sigma
+> npm install
+> npm start
+```
 
-* Não limite-se às funcionalidades acima. Qualquer outra feature extra (e não obrigatória) é bem-vinda. Por exemplo:
-    * Campo de pesquisa nas páginas de listagem
-    * Funcionalidade para adicionar produtos em um carrinho
-    * Paginação
-* O layout é por sua conta.
-* A arquitetura é por sua conta.
-* Qualquer framework SPA (Vue.js, React ou Angular 2+) é permitido
-* Usar javascript puro é permitido
-* Usar CSS puro é permitido
-* Usar qualquer pré-processador (LESS ou SASS) é permitido
-* Não se esqueça da otimização da velocidade da aplicação nem da experiência do usuário.
-* Alguns endereços de imagens disponibilizadas pela API estão quebrando. Existe uma forma de resolução. Faz parte do desafio resolver.
-
-## Critérios de avaliação
-
-* Usabilidade
-* Criatividade
-* Código limpo e organizado
-* Documentação do projeto (readme)
-
-## Procedimento
-
-* Faça um fork do projeto https://github.com/gabrielsimplicio/processo-seletivo-pleno-sigma
-* Ao finalizar a sua aplicação, crie um pull request no projeto de origem.
-* Para ter acesso à API, você deve ter uma key. Basta cadastrar-se no site da marvel e obtê-la. É totalmente gratuita.
-
-## Prazo
-* O prazo para criar pull requests é até o dia 02/04/2018, às 12h.
-
-### Dê o seu melhor!
-### Boa prova! ;)
+Foram desenvolvidos alguns testes unitários com o framework `Jest` para funções que são puramente de lógica e transformação de objetos. Os testes podem ser executados com o comando `npm test`.

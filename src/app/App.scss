@@ -1,0 +1,66 @@
+.App {
+  height: 100%;
+}
+
+.App-content {
+  min-height: 100%;
+  padding: 60px 150px;
+  background-color: #202020;
+  color: white;
+}
+
+.App-header {
+  display: flex;
+  padding: 0 130px;
+  color: #ffffff;
+  background-color: #f0141e;
+
+  > div {
+    flex: 1;
+  }
+
+  > a {
+    display: inline-block;
+    padding: 15px;
+  }
+
+  hgroup {
+    display: none;
+  }
+
+
+  .App-logo {
+    height: 60px;
+  }
+
+}
+
+.App-navbar {
+
+  ul {
+    list-style: none;
+    padding-left: 10px;
+    margin: 20px 10px;
+  }
+
+  li {
+    display: inline-block;
+
+    a {
+      display: inline-block;
+      padding: 5px 10px;
+      color: #ffffff;
+      text-decoration: none;
+      line-height: 35px;
+      font-size: 20px;
+
+      &:hover {
+        background-color: #d0141e
+      }
+
+      &.selected {
+        border-bottom: 3px solid #202020;
+      }
+    }
+  }
+}
