@@ -1,0 +1,113 @@
+.Comics {
+
+  h1 {
+    margin-bottom: 30px;
+    font-size: 2.3em;
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+}
+
+
+.ComicLink {
+
+  position: relative;
+  width: 216px;
+  height: 325px;
+  margin: 10px;
+  margin-bottom: 20px;
+  border: 3px solid #f0141e;
+  overflow: hidden;
+
+  &:hover {
+    border-color: black;
+  }
+
+  img {
+    display: block;
+    width: 216px;
+  }
+
+  .description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    padding: 10px 0;
+
+    color: white;
+    background-color: rgba($color: #000000, $alpha: .7)
+  }
+
+  .title,
+  .price {
+    display: block;
+    text-decoration: none;
+  }
+
+}
+
+.ComicInfo {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  margin: 0;
+
+  h1 {
+    margin-bottom: 30px;
+    font-size: 2.3em;
+
+  }
+
+  .img-comic {
+    max-width: 356px;
+    margin-left: 10px;
+    border: 3px solid #f0141e;
+  }
+
+}
+
+.ComicCharacters {
+  padding: 20px 0;
+
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .character {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+
+    border-radius: 50%;
+    border: 3px solid #f01413;
+
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      left: -10px;
+      width: 70px;
+    }
+
+  }
+
+}
