@@ -1,0 +1,199 @@
+
+section .bodyIntro  {
+    margin: 0;
+    background-color: #e12835;
+    background-image: radial-gradient(#e12835 20%, #be2633 50%, rgba(0, 0, 0, .5) 100%);
+    background-size: 120%;
+    background-position: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    animation: tighten-vinette ease-out 1800ms forwards;
+}
+.images {
+    pointer-events: none;
+    height: 100vh;
+    top: 82px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0.6;
+    z-index: 9999;
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;
+    background-image: url('https://static.comicvine.com/uploads/original/11124/111240517/4986890-4700382785-29908.jpg');
+}
+.wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    cursor: pointer;
+    text-align: center;
+}
+.logo:hover .restart {
+    opacity: 0.2;
+}
+.restart {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: -0.08rem;
+    transition: opacity 150ms linear;
+}
+.restart:hover{
+    color: #e1e600;
+}
+.marvel, .studios {
+    position: relative;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -0.2rem;
+    font-size: 5rem;
+    margin: 0.05rem 0.05rem 0.5rem;
+    padding: 0 0.4rem;
+    display: inline-block;
+}
+.studios {
+    font-weight: 500;
+    letter-spacing: -0.3rem;
+    transform: translateX(-95px);
+}
+.marvel {
+    z-index: 10;
+    font-weight: 800;
+    transform: translateX(95px);
+}
+.marvel:before {
+    z-index: -10;
+    content: '';
+    display: block;
+    background-color: #e12835;
+    border: solid rgba(255, 255, 255, .2) 1px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.studios:after, .studios:before {
+    content: '';
+    display: block;
+    height: 3px;
+    position: absolute;
+    background-color: #fff;
+    display: block;
+    left: 0.4rem;
+    right: 0.4rem;
+}
+.studios:before {
+    top: 0;
+}
+.studios:after {
+    bottom: 0;
+}
+.wrapper.run-animation {
+    animation: shrink ease-out 4800ms forwards 600ms;
+}
+.wrapper.run-animation .marvel {
+    transform: translateX(95px);
+    animation: slide-out-X 750ms ease forwards;
+}
+.wrapper.run-animation .studios {
+    transform: translateX(-95px);
+    color: transparent;
+    animation: slide-out-X 750ms ease forwards, show-text 300ms linear forwards 1500ms;
+}
+.wrapper.run-animation .studios:before {
+    transform: translateY(2.9rem);
+    animation: slide-out-Y 300ms ease forwards 750ms;
+}
+.wrapper.run-animation .studios:after {
+    transform: translateY(-2.9rem);
+    animation: slide-out-Y 300ms ease forwards 750ms;
+}
+.wrapper.run-animation .restart {
+    opacity: 0;
+    animation: fade-down 1200ms ease 3600ms forwards;
+}
+.wrapper.run-animation ~ .images {
+    animation: flicker-images 1500ms 2 steps(1, end), fade-out 4500ms forwards;
+}
+@keyframes slide-out-X {
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slide-out-Y {
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes show-text {
+    100% {
+        color: #fff;
+    }
+}
+@keyframes shrink {
+    100% {
+        transform: scale(0.8);
+    }
+}
+@keyframes tighten-vinette {
+    100% {
+        background-size: 120%;
+    }
+}
+@keyframes fade-down {
+    0% {
+        transform: translateY(-2rem);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+    }
+}
+@keyframes fade-out {
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes flicker-images {
+    0% {
+        background-image: url('https://i.ytimg.com/vi/lhgrYaBmplY/maxresdefault.jpg');
+    }
+    10% {
+        background-image: url('https://doomrocket.com/wp-content/uploads/2014/08/IMG_4527.png');
+    }
+    20% {
+        background-image: url('https://www.nerdmuch.com/wp-content/uploads/2016/02/funny-deadpool.jpg');
+    }
+    30% {
+        background-image: url('https://i.pinimg.com/736x/b4/e0/d5/b4e0d51ab9af14198f733ca582d06794--geek-things-geek-art.jpg');
+    }
+    40% {
+        background-image: url('https://images.fastcompany.net/image/upload/w_1280,f_auto,q_auto,fl_lossy/fc/3025621-poster-p-1-ka-pow-marvel-opens-massive-comic-book-images-archive-and-api-to-fans-developers.jpg');
+    }
+    50% {
+        background-image: url('http://nerdist.com/wp-content/uploads/2015/03/captain-america-iron-man-civil-war-1024x597.jpg');
+    }
+    60% {
+        background-image: url('https://geekreply.com/wp-content/uploads/2015/05/watchmen.jpg');
+    }
+    70% {
+        background-image: url('http://cdn.playbuzz.com/cdn/3c096341-2a6c-4ae6-bb76-3973445cfbcf/6b938520-4962-403a-9ce3-7bf298918cad.jpg');
+    }
+    80% {
+        background-image: url('http://cdn.wegotthiscovered.com/wp-content/uploads/2016/05/Storm-and-Black-Panther-marriage.jpg');
+    }
+    90% {
+        background-image: url('https://am21.akamaized.net/tms/cnt/uploads/2014/01/Black-Widow-70s-Suit-3-580x270.jpg');
+    }
+    100% {
+        background-image: url('https://i.ytimg.com/vi/lhgrYaBmplY/maxresdefault.jpg');
+    }
+}
