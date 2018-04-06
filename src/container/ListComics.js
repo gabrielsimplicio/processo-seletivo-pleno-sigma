@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Comics from '../ui/Comics'
 import MarvelApi from './../services/MarvelApi'
 import Loader from './../ui/Loader'
-import InfiniteScroll from 'react-infinite-scroller'
+
 
 
 export default class ListComics extends Component {
