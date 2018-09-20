@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "script": "react-scripts start",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": "8081"
+      }
+    }
+  ]
+}
